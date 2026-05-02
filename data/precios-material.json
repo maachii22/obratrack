@@ -1,0 +1,74 @@
+[
+  {
+    "material": "Baldosas",
+    "vigenciaDesde": "2026-01-01",
+    "precio": 1.0,
+    "unidad": "m²"
+  },
+  {
+    "material": "Baldosas",
+    "vigenciaDesde": "2026-03-01",
+    "precio": 1.0,
+    "unidad": "m²"
+  },
+  {
+    "material": "Baldosas",
+    "vigenciaDesde": "2026-04-15",
+    "precio": 1.0,
+    "unidad": "m²"
+  },
+  {
+    "material": "Volquetes",
+    "vigenciaDesde": "2026-01-01",
+    "precio": 1.0,
+    "unidad": "m²"
+  },
+  {
+    "material": "Volquetes",
+    "vigenciaDesde": "2026-02-01",
+    "precio": 1.0,
+    "unidad": "m²"
+  },
+  {
+    "material": "Caños",
+    "vigenciaDesde": "2026-01-01",
+    "precio": 1.0,
+    "unidad": "u"
+  },
+  {
+    "material": "Arena",
+    "vigenciaDesde": "2026-01-01",
+    "precio": 1.0,
+    "unidad": "u"
+  },
+  {
+    "material": "Cal",
+    "vigenciaDesde": "2026-01-01",
+    "precio": 1.0,
+    "unidad": "u"
+  },
+  {
+    "material": "Cemento",
+    "vigenciaDesde": "2026-01-01",
+    "precio": 1.0,
+    "unidad": "u"
+  },
+  {
+    "material": "Polietileno",
+    "vigenciaDesde": "2026-01-01",
+    "precio": 1.0,
+    "unidad": "u"
+  },
+  {
+    "material": "Seña Pallet",
+    "vigenciaDesde": "2026-01-01",
+    "precio": 1.0,
+    "unidad": "u"
+  },
+  {
+    "material": "Bolson",
+    "vigenciaDesde": "2026-01-01",
+    "precio": 1.0,
+    "unidad": "u"
+  }
+]

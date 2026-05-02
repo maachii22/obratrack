@@ -1,0 +1,469 @@
+[
+  {
+    "mes": "2026-01",
+    "impuestos": [],
+    "planesPago": [
+      {
+        "concepto": "PP.V503844",
+        "vencimiento": "16 y 26/mes",
+        "monto": 731239.0
+      },
+      {
+        "concepto": "PP.U164330",
+        "vencimiento": "16 y 26/mes",
+        "monto": 594276.94
+      }
+    ],
+    "costosFijos": [
+      {
+        "concepto": "contador",
+        "vencimiento": null,
+        "monto": 120000.0
+      },
+      {
+        "concepto": "seguro saveiro",
+        "vencimiento": "28/MES",
+        "monto": 79827.0
+      },
+      {
+        "concepto": "seguro transit",
+        "vencimiento": "28/MES",
+        "monto": 102958.0
+      }
+    ],
+    "costosVariablesEstimados": 6025379.43
+  },
+  {
+    "mes": "2026-02",
+    "impuestos": [],
+    "planesPago": [
+      {
+        "concepto": "PP.V503844",
+        "vencimiento": "16 y 26/mes",
+        "monto": 731239.0
+      },
+      {
+        "concepto": "PP.V725328",
+        "vencimiento": "16 y 26/mes",
+        "monto": 1758888.09
+      },
+      {
+        "concepto": "PP.U164330",
+        "vencimiento": "16 y 26/mes",
+        "monto": 594276.94
+      }
+    ],
+    "costosFijos": [
+      {
+        "concepto": "contador",
+        "vencimiento": null,
+        "monto": 120000.0
+      },
+      {
+        "concepto": "seguro saveiro",
+        "vencimiento": "28/MES",
+        "monto": 79827.0
+      },
+      {
+        "concepto": "seguro transit",
+        "vencimiento": "28/MES",
+        "monto": 102958.0
+      }
+    ],
+    "costosVariablesEstimados": 2214.8
+  },
+  {
+    "mes": "2026-03",
+    "impuestos": [],
+    "planesPago": [
+      {
+        "concepto": "PP.V503844",
+        "vencimiento": "16 y 26/mes",
+        "monto": 737942.56
+      },
+      {
+        "concepto": "PP.V725328",
+        "vencimiento": "16 y 26/mes",
+        "monto": 1586534.13
+      },
+      {
+        "concepto": "PP.U164330",
+        "vencimiento": "16 y 26/mes",
+        "monto": 608658.44
+      }
+    ],
+    "costosFijos": [
+      {
+        "concepto": "contador",
+        "vencimiento": null,
+        "monto": 120000.0
+      },
+      {
+        "concepto": "seguro saveiro",
+        "vencimiento": "28/MES",
+        "monto": 79827.0
+      },
+      {
+        "concepto": "seguro transit",
+        "vencimiento": "28/MES",
+        "monto": 102958.0
+      }
+    ],
+    "costosVariablesEstimados": 2579.4700000000003
+  },
+  {
+    "mes": "2026-04",
+    "impuestos": [
+      {
+        "concepto": "Ganancias",
+        "vencimiento": "13/mes",
+        "monto": 1147381.56
+      }
+    ],
+    "planesPago": [
+      {
+        "concepto": "PP.V503844",
+        "vencimiento": "16 y 26/mes",
+        "monto": 731239.0
+      },
+      {
+        "concepto": "PP.V725328",
+        "vencimiento": "16 y 26/mes",
+        "monto": 1572123.0
+      },
+      {
+        "concepto": "PP.U164330",
+        "vencimiento": "16 y 26/mes",
+        "monto": 594276.94
+      }
+    ],
+    "costosFijos": [
+      {
+        "concepto": "contador",
+        "vencimiento": null,
+        "monto": 120000.0
+      },
+      {
+        "concepto": "seguro saveiro",
+        "vencimiento": "28/MES",
+        "monto": 79827.0
+      },
+      {
+        "concepto": "seguro transit",
+        "vencimiento": "28/MES",
+        "monto": 102958.0
+      }
+    ],
+    "costosVariablesEstimados": 0.0
+  },
+  {
+    "mes": "2026-05",
+    "impuestos": [
+      {
+        "concepto": "IVA",
+        "vencimiento": "18/mes",
+        "monto": 681525.67
+      }
+    ],
+    "planesPago": [
+      {
+        "concepto": "PP.V503844",
+        "vencimiento": "16 y 26/mes",
+        "monto": 731239.0
+      },
+      {
+        "concepto": "PP.V725328",
+        "vencimiento": "16 y 26/mes",
+        "monto": 1572123.0
+      },
+      {
+        "concepto": "PP.U164330",
+        "vencimiento": "16 y 26/mes",
+        "monto": 594276.94
+      }
+    ],
+    "costosFijos": [
+      {
+        "concepto": "contador",
+        "vencimiento": null,
+        "monto": 120000.0
+      },
+      {
+        "concepto": "seguro saveiro",
+        "vencimiento": "28/MES",
+        "monto": 79827.0
+      },
+      {
+        "concepto": "seguro transit",
+        "vencimiento": "28/MES",
+        "monto": 102958.0
+      }
+    ],
+    "costosVariablesEstimados": 0.0
+  },
+  {
+    "mes": "2026-06",
+    "impuestos": [
+      {
+        "concepto": "IVA",
+        "vencimiento": "18/mes",
+        "monto": 3708481.08
+      }
+    ],
+    "planesPago": [
+      {
+        "concepto": "PP.V503844",
+        "vencimiento": "16 y 26/mes",
+        "monto": 731239.0
+      },
+      {
+        "concepto": "PP.V725328",
+        "vencimiento": "16 y 26/mes",
+        "monto": 1572123.0
+      },
+      {
+        "concepto": "PP.U164330",
+        "vencimiento": "16 y 26/mes",
+        "monto": 594276.94
+      }
+    ],
+    "costosFijos": [
+      {
+        "concepto": "contador",
+        "vencimiento": null,
+        "monto": 120000.0
+      },
+      {
+        "concepto": "seguro saveiro",
+        "vencimiento": "28/MES",
+        "monto": 79827.0
+      },
+      {
+        "concepto": "seguro transit",
+        "vencimiento": "28/MES",
+        "monto": 102958.0
+      }
+    ],
+    "costosVariablesEstimados": 0.0
+  },
+  {
+    "mes": "2026-07",
+    "impuestos": [],
+    "planesPago": [
+      {
+        "concepto": "PP.V503844",
+        "vencimiento": "16 y 26/mes",
+        "monto": 731239.0
+      },
+      {
+        "concepto": "PP.V725328",
+        "vencimiento": "16 y 26/mes",
+        "monto": 1572123.0
+      },
+      {
+        "concepto": "PP.U164330",
+        "vencimiento": "16 y 26/mes",
+        "monto": 594276.94
+      }
+    ],
+    "costosFijos": [
+      {
+        "concepto": "contador",
+        "vencimiento": null,
+        "monto": 120000.0
+      },
+      {
+        "concepto": "seguro saveiro",
+        "vencimiento": "28/MES",
+        "monto": 79827.0
+      },
+      {
+        "concepto": "seguro transit",
+        "vencimiento": "28/MES",
+        "monto": 102958.0
+      }
+    ],
+    "costosVariablesEstimados": 0.0
+  },
+  {
+    "mes": "2026-08",
+    "impuestos": [],
+    "planesPago": [
+      {
+        "concepto": "PP.V503844",
+        "vencimiento": "16 y 26/mes",
+        "monto": 731239.0
+      },
+      {
+        "concepto": "PP.V725328",
+        "vencimiento": "16 y 26/mes",
+        "monto": 1572123.0
+      },
+      {
+        "concepto": "PP.U164330",
+        "vencimiento": "16 y 26/mes",
+        "monto": 594276.94
+      }
+    ],
+    "costosFijos": [
+      {
+        "concepto": "contador",
+        "vencimiento": null,
+        "monto": 120000.0
+      },
+      {
+        "concepto": "seguro saveiro",
+        "vencimiento": "28/MES",
+        "monto": 79827.0
+      },
+      {
+        "concepto": "seguro transit",
+        "vencimiento": "28/MES",
+        "monto": 102958.0
+      }
+    ],
+    "costosVariablesEstimados": 0.0
+  },
+  {
+    "mes": "2026-09",
+    "impuestos": [],
+    "planesPago": [
+      {
+        "concepto": "PP.U164330",
+        "vencimiento": "16 y 26/mes",
+        "monto": 594276.94
+      }
+    ],
+    "costosFijos": [
+      {
+        "concepto": "contador",
+        "vencimiento": null,
+        "monto": 120000.0
+      },
+      {
+        "concepto": "seguro saveiro",
+        "vencimiento": "28/MES",
+        "monto": 79827.0
+      },
+      {
+        "concepto": "seguro transit",
+        "vencimiento": "28/MES",
+        "monto": 102958.0
+      }
+    ],
+    "costosVariablesEstimados": 0.0
+  },
+  {
+    "mes": "2026-10",
+    "impuestos": [],
+    "planesPago": [
+      {
+        "concepto": "PP.U164330",
+        "vencimiento": "16 y 26/mes",
+        "monto": 594276.94
+      }
+    ],
+    "costosFijos": [
+      {
+        "concepto": "contador",
+        "vencimiento": null,
+        "monto": 120000.0
+      },
+      {
+        "concepto": "seguro saveiro",
+        "vencimiento": "28/MES",
+        "monto": 79827.0
+      },
+      {
+        "concepto": "seguro transit",
+        "vencimiento": "28/MES",
+        "monto": 102958.0
+      }
+    ],
+    "costosVariablesEstimados": 0.0
+  },
+  {
+    "mes": "2026-11",
+    "impuestos": [],
+    "planesPago": [
+      {
+        "concepto": "PP.U164330",
+        "vencimiento": "16 y 26/mes",
+        "monto": 594276.94
+      }
+    ],
+    "costosFijos": [
+      {
+        "concepto": "contador",
+        "vencimiento": null,
+        "monto": 120000.0
+      },
+      {
+        "concepto": "seguro saveiro",
+        "vencimiento": "28/MES",
+        "monto": 79827.0
+      },
+      {
+        "concepto": "seguro transit",
+        "vencimiento": "28/MES",
+        "monto": 102958.0
+      }
+    ],
+    "costosVariablesEstimados": 0.0
+  },
+  {
+    "mes": "2026-12",
+    "impuestos": [],
+    "planesPago": [
+      {
+        "concepto": "PP.U164330",
+        "vencimiento": "16 y 26/mes",
+        "monto": 594276.94
+      }
+    ],
+    "costosFijos": [
+      {
+        "concepto": "contador",
+        "vencimiento": null,
+        "monto": 120000.0
+      },
+      {
+        "concepto": "seguro saveiro",
+        "vencimiento": "28/MES",
+        "monto": 79827.0
+      },
+      {
+        "concepto": "seguro transit",
+        "vencimiento": "28/MES",
+        "monto": 102958.0
+      }
+    ],
+    "costosVariablesEstimados": 0.0
+  },
+  {
+    "mes": "2027-01",
+    "impuestos": [],
+    "planesPago": [
+      {
+        "concepto": "PP.U164330",
+        "vencimiento": "16 y 26/mes",
+        "monto": 594276.94
+      }
+    ],
+    "costosFijos": [],
+    "costosVariablesEstimados": 0.0
+  },
+  {
+    "mes": "2027-02",
+    "impuestos": [],
+    "planesPago": [
+      {
+        "concepto": "PP.U164330",
+        "vencimiento": "16 y 26/mes",
+        "monto": 594276.94
+      }
+    ],
+    "costosFijos": [],
+    "costosVariablesEstimados": 0.0
+  }
+]

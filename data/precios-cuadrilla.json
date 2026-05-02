@@ -1,0 +1,22 @@
+[
+  {
+    "cuadrilla": "Adrian",
+    "vigenciaDesde": "2026-01-01",
+    "precioM2": 1.0
+  },
+  {
+    "cuadrilla": "Mario",
+    "vigenciaDesde": "2026-02-01",
+    "precioM2": 1.0
+  },
+  {
+    "cuadrilla": "Tyson",
+    "vigenciaDesde": "2026-01-01",
+    "precioM2": 1.0
+  },
+  {
+    "cuadrilla": "Matias",
+    "vigenciaDesde": "2026-01-01",
+    "precioM2": 1.0
+  }
+]
