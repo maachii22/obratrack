@@ -24,6 +24,7 @@ import type {
   PrecioMaterial,
   EgresoMensual,
 } from "@/lib/types";
+import { Hammer, DollarSign, Building2, Wallet, Trophy } from "lucide-react";
 
 const ObrasMap = dynamic(
   () => import("@/components/obras-map").then((m) => m.ObrasMap),
@@ -31,7 +32,7 @@ const ObrasMap = dynamic(
     ssr: false,
     loading: () => (
       <Card>
-        <CardContent className="h-[400px] animate-pulse" />
+        <CardContent className="h-[420px] animate-pulse bg-muted/30" />
       </Card>
     ),
   }
@@ -39,21 +40,18 @@ const ObrasMap = dynamic(
 
 export default function DashboardPage() {
   const { rdos } = useStore();
+  const meses = useMemo(() => {
+    const s = new Set(rdos.map((r) => r.fecha.slice(0, 7)));
+    return Array.from(s).sort().reverse();
+  }, [rdos]);
+
   const [mes, setMes] = useState<string>(() => {
-    const meses = Array.from(new Set(rdos.map((r) => r.fecha.slice(0, 7))))
-      .sort()
-      .reverse();
     const actual = mesActual();
     return meses.includes(actual) ? actual : meses[0] ?? actual;
   });
 
   const pc = preciosCuadrilla as PrecioCuadrilla[];
   const pm = preciosMaterial as PrecioMaterial[];
-
-  const meses = useMemo(() => {
-    const s = new Set(rdos.map((r) => r.fecha.slice(0, 7)));
-    return Array.from(s).sort().reverse();
-  }, [rdos]);
 
   const resumen = useMemo(() => resumenMensual(rdos, pc, pm), [rdos, pc, pm]);
   const resumenMesActual = resumen.find((r) => r.mes === mes);
@@ -101,15 +99,17 @@ export default function DashboardPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-wrap items-center justify-between gap-3">
+      <header className="flex flex-wrap items-end justify-between gap-3 pb-2 border-b">
         <div>
-          <h1 className="text-3xl font-semibold tracking-tight">Dashboard</h1>
-          <p className="text-sm text-muted-foreground">
-            Vista general de la operación · {fmtMes(mes)}
+          <p className="text-xs text-muted-foreground uppercase tracking-wider font-medium mb-1">
+            Vista general · {fmtMes(mes)}
           </p>
+          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">
+            Dashboard
+          </h1>
         </div>
         <Select value={mes} onValueChange={(v) => v && setMes(v)}>
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-[200px] h-10">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -120,10 +120,11 @@ export default function DashboardPage() {
             ))}
           </SelectContent>
         </Select>
-      </div>
+      </header>
 
       <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         <KpiCard
+          icon={Hammer}
           label="M² ejecutados"
           value={fmtM2(resumenMesActual?.m2 ?? 0)}
           delta={
@@ -131,53 +132,80 @@ export default function DashboardPage() {
               ? { pct: m2DeltaPct, label: "vs mes anterior" }
               : undefined
           }
+          accent="primary"
         />
         <KpiCard
+          icon={DollarSign}
           label="Costo / m² promedio"
           value={fmtARS(resumenMesActual?.costoM2 ?? 0)}
           hint={`${resumenMesActual?.rdos ?? 0} reportes este mes`}
+          accent="success"
         />
         <KpiCard
+          icon={Building2}
           label="Obras activas"
           value={obrasActivas.toString()}
           hint="frentes únicos"
+          accent="warning"
         />
         <KpiCard
+          icon={Wallet}
           label="Egresos del mes"
           value={fmtARS(totalEgreso)}
           hint="impuestos + fijos + planes"
+          accent="destructive"
         />
       </div>
 
-      <div className="grid gap-4 grid-cols-1 lg:grid-cols-2">
-        <ObrasMap rdos={rdos} mes={mes} />
+      <div className="grid gap-4 grid-cols-1 lg:grid-cols-3">
+        <div className="lg:col-span-2">
+          <ObrasMap rdos={rdos} mes={mes} />
+        </div>
         <CostoM2Trend data={resumen} />
       </div>
 
-      <div className="grid gap-4 grid-cols-1 lg:grid-cols-2">
-        <M2CuadrillaBars
-          data={cuadrillasDataChart}
-          cuadrillas={["Adrian", "Mario", "Tyson", "Matias"]}
-        />
+      <div className="grid gap-4 grid-cols-1 lg:grid-cols-3">
+        <div className="lg:col-span-2">
+          <M2CuadrillaBars
+            data={cuadrillasDataChart}
+            cuadrillas={["Adrian", "Mario", "Tyson", "Matias"]}
+          />
+        </div>
         <Card>
-          <CardHeader>
-            <CardTitle className="text-base">Top 3 obras del mes</CardTitle>
+          <CardHeader className="flex flex-row items-center gap-3 pb-3">
+            <div className="h-8 w-8 rounded-md bg-warning/10 flex items-center justify-center">
+              <Trophy className="h-4 w-4 text-warning" />
+            </div>
+            <div>
+              <CardTitle className="text-base leading-tight">Top obras del mes</CardTitle>
+              <p className="text-xs text-muted-foreground">Por costo total</p>
+            </div>
           </CardHeader>
-          <CardContent className="space-y-3">
+          <CardContent className="space-y-1">
             {top3.length === 0 && (
-              <p className="text-sm text-muted-foreground">Sin obras este mes.</p>
+              <p className="text-sm text-muted-foreground py-8 text-center">
+                Sin obras este mes.
+              </p>
             )}
             {top3.map((o, i) => (
               <div
                 key={o.frente}
-                className="flex items-start gap-3 py-2 border-b last:border-0"
+                className="flex items-start gap-3 py-3 border-b last:border-0 group"
               >
-                <span className="text-2xl font-semibold text-muted-foreground tabular-nums w-8">
+                <div
+                  className={`h-9 w-9 rounded-lg flex items-center justify-center font-bold text-sm shrink-0 ${
+                    i === 0
+                      ? "bg-warning/15 text-warning"
+                      : i === 1
+                      ? "bg-muted text-muted-foreground"
+                      : "bg-muted/50 text-muted-foreground"
+                  }`}
+                >
                   #{i + 1}
-                </span>
+                </div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-medium truncate">{o.frente}</p>
-                  <p className="text-xs text-muted-foreground truncate">
+                  <p className="font-medium truncate text-sm">{o.frente}</p>
+                  <p className="text-xs text-muted-foreground truncate mt-0.5">
                     {fmtM2(o.m2)} · {o.rdos} días · {o.cuadrillas.join(", ")}
                   </p>
                 </div>

@@ -136,3 +136,19 @@
   border-radius: 0.5rem;
   z-index: 0;
 }
+
+.leaflet-tooltip {
+  background: var(--card) !important;
+  color: var(--card-foreground) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
+  padding: 8px 10px !important;
+  border-radius: 8px !important;
+  font-family: var(--font-sans) !important;
+}
+.leaflet-tooltip-top:before { border-top-color: var(--card) !important; }
+.leaflet-tooltip-bottom:before { border-bottom-color: var(--card) !important; }
+.leaflet-tooltip-left:before { border-left-color: var(--card) !important; }
+.leaflet-tooltip-right:before { border-right-color: var(--card) !important; }
+
+.dark .leaflet-tile-pane { filter: brightness(0.95); }

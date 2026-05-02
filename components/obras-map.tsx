@@ -5,7 +5,9 @@ import "leaflet/dist/leaflet.css";
 import frentes from "@/data/frentes-geocoded.json";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useMemo } from "react";
+import { useTheme } from "next-themes";
 import type { RDO } from "@/lib/types";
+import { MapPin } from "lucide-react";
 
 type Props = {
   rdos: RDO[];
@@ -15,6 +17,9 @@ type Props = {
 type Frente = { direccion: string; lat: number; lng: number };
 
 export function ObrasMap({ rdos, mes }: Props) {
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
+
   const points = useMemo(() => {
     const filtered = mes ? rdos.filter((r) => r.fecha.startsWith(mes)) : rdos;
     const byFrente = new Map<string, { m2: number; cuadrillas: Set<string> }>();
@@ -33,41 +38,63 @@ export function ObrasMap({ rdos, mes }: Props) {
       }));
   }, [rdos, mes]);
 
+  // Tiles B&N de CartoDB (sin API key)
+  const tileUrl = isDark
+    ? "https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png"
+    : "https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png";
+  const labelsUrl = isDark
+    ? "https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png"
+    : "https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png";
+
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="text-base">Obras activas en CABA</CardTitle>
+    <Card className="overflow-hidden">
+      <CardHeader className="flex flex-row items-center justify-between gap-2 pb-3">
+        <div className="flex items-center gap-2">
+          <div className="h-8 w-8 rounded-md bg-primary/10 flex items-center justify-center">
+            <MapPin className="h-4 w-4 text-primary" />
+          </div>
+          <div>
+            <CardTitle className="text-base leading-tight">Obras activas</CardTitle>
+            <p className="text-xs text-muted-foreground">
+              {points.length} frentes con actividad
+            </p>
+          </div>
+        </div>
       </CardHeader>
-      <CardContent>
-        <div className="h-[320px] rounded-md overflow-hidden">
+      <CardContent className="p-0">
+        <div className="h-[340px]" key={isDark ? "dark" : "light"}>
           <MapContainer
             center={[-34.5627, -58.4583]}
             zoom={13}
-            style={{ height: "100%", width: "100%" }}
+            style={{ height: "100%", width: "100%", background: "var(--color-muted)" }}
             scrollWheelZoom={false}
+            attributionControl={false}
           >
             <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              attribution='&copy; OpenStreetMap &copy; CARTO'
+              url={tileUrl}
+              subdomains="abcd"
             />
+            <TileLayer url={labelsUrl} subdomains="abcd" />
             {points.map((p) => (
               <CircleMarker
                 key={p.direccion}
                 center={[p.lat, p.lng]}
-                radius={6 + Math.min(10, p.m2 / 30)}
+                radius={5 + Math.min(12, p.m2 / 25)}
                 pathOptions={{
                   color: "var(--color-primary)",
+                  weight: 2,
                   fillColor: "var(--color-primary)",
-                  fillOpacity: 0.6,
+                  fillOpacity: 0.45,
                 }}
               >
-                <Tooltip>
+                <Tooltip direction="top" offset={[0, -4]} opacity={1}>
                   <div className="text-xs leading-tight">
-                    <strong>{p.direccion}</strong>
-                    <br />
-                    {p.cuadrillas}
-                    <br />
-                    {p.m2.toFixed(1)} m²
+                    <div className="font-semibold mb-0.5">{p.direccion}</div>
+                    <div className="text-[11px] opacity-80">{p.cuadrillas}</div>
+                    <div className="text-[11px] font-medium mt-0.5">
+                      {p.m2.toFixed(1)} m²
+                    </div>
                   </div>
                 </Tooltip>
               </CircleMarker>
