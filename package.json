@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "vitest"
+    "test": "vitest",
+    "geocode": "tsx scripts/geocode-frentes.ts"
   },
   "keywords": [],
   "author": "",
@@ -44,6 +45,7 @@
     "happy-dom": "^20.9.0",
     "postcss": "^8.5.13",
     "tailwindcss": "^4.2.4",
+    "tsx": "^4.21.0",
     "typescript": "^6.0.3",
     "vitest": "^4.1.5"
   }
