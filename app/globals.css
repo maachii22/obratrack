@@ -130,3 +130,9 @@
   * { @apply border-border outline-ring/50; }
   body { @apply bg-background text-foreground font-sans antialiased; }
 }
+
+.leaflet-container {
+  font-family: var(--font-sans);
+  border-radius: 0.5rem;
+  z-index: 0;
+}
