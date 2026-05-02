@@ -18,14 +18,22 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
-import { ChevronDown, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  ChevronDown,
+  ChevronRight,
+  Trash2,
+  Search,
+} from "lucide-react";
 import { fmtFecha, fmtM2, fmtARS } from "@/lib/formatters";
 import { costoRDO } from "@/lib/calc";
-import type { RDO, PrecioCuadrilla, PrecioMaterial } from "@/lib/types";
-import preciosC from "@/data/precios-cuadrilla.json";
-import preciosM from "@/data/precios-material.json";
+import type { RDO } from "@/lib/types";
+import { useStore } from "@/lib/store";
+import { RdoForm } from "@/components/rdo-form";
+import { toast } from "sonner";
 
 export function RdoTable({ rdos }: { rdos: RDO[] }) {
+  const { preciosCuadrilla, preciosMaterial, removeRDO } = useStore();
   const [q, setQ] = useState("");
   const [cuadrilla, setCuadrilla] = useState<string>("all");
   const [trabajo, setTrabajo] = useState<string>("all");
@@ -44,15 +52,25 @@ export function RdoTable({ rdos }: { rdos: RDO[] }) {
       .sort((a, b) => b.fecha.localeCompare(a.fecha));
   }, [rdos, q, cuadrilla, trabajo]);
 
+  const handleDelete = (id: string, frente: string) => {
+    removeRDO(id);
+    toast.success(`RDO eliminado · ${frente}`, {
+      description: "Demo: se restaura al recargar.",
+    });
+  };
+
   return (
     <div className="space-y-3">
       <div className="flex flex-wrap gap-2 items-center">
-        <Input
-          placeholder="Buscar por dirección..."
-          value={q}
-          onChange={(e) => setQ(e.target.value)}
-          className="max-w-xs"
-        />
+        <div className="relative max-w-xs flex-1">
+          <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <Input
+            placeholder="Buscar por dirección..."
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+            className="pl-8"
+          />
+        </div>
         <Select value={cuadrilla} onValueChange={(v) => v && setCuadrilla(v)}>
           <SelectTrigger className="w-[160px]">
             <SelectValue />
@@ -81,10 +99,10 @@ export function RdoTable({ rdos }: { rdos: RDO[] }) {
         </span>
       </div>
 
-      <div className="rounded-md border overflow-x-auto">
+      <div className="rounded-lg border overflow-x-auto bg-card">
         <Table>
           <TableHeader>
-            <TableRow>
+            <TableRow className="bg-muted/40">
               <TableHead className="w-8" />
               <TableHead>Fecha</TableHead>
               <TableHead>Frente</TableHead>
@@ -92,19 +110,27 @@ export function RdoTable({ rdos }: { rdos: RDO[] }) {
               <TableHead className="text-right">M²</TableHead>
               <TableHead>Trabajo</TableHead>
               <TableHead className="text-right">Costo</TableHead>
+              <TableHead className="text-right w-[120px]">Acciones</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
+            {filtered.length === 0 && (
+              <TableRow>
+                <TableCell colSpan={8} className="h-32 text-center text-sm text-muted-foreground">
+                  Sin reportes que coincidan con los filtros.
+                </TableCell>
+              </TableRow>
+            )}
             {filtered.map((r) => {
-              const c = costoRDO(r, preciosC as PrecioCuadrilla[], preciosM as PrecioMaterial[]);
+              const c = costoRDO(r, preciosCuadrilla, preciosMaterial);
               const isOpen = expanded === r.id;
               return (
                 <Fragment key={r.id}>
-                  <TableRow
-                    className="cursor-pointer"
-                    onClick={() => setExpanded(isOpen ? null : r.id)}
-                  >
-                    <TableCell>
+                  <TableRow className={isOpen ? "bg-muted/30" : ""}>
+                    <TableCell
+                      className="cursor-pointer"
+                      onClick={() => setExpanded(isOpen ? null : r.id)}
+                    >
                       {isOpen ? (
                         <ChevronDown className="h-4 w-4" />
                       ) : (
@@ -121,11 +147,25 @@ export function RdoTable({ rdos }: { rdos: RDO[] }) {
                       </Badge>
                     </TableCell>
                     <TableCell className="text-right tabular-nums">{fmtARS(c.total)}</TableCell>
+                    <TableCell className="text-right">
+                      <div className="flex items-center justify-end gap-1">
+                        <RdoForm rdo={r} />
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="text-muted-foreground hover:text-destructive"
+                          onClick={() => handleDelete(r.id, r.frente)}
+                          aria-label="Eliminar"
+                        >
+                          <Trash2 className="h-3.5 w-3.5" />
+                        </Button>
+                      </div>
+                    </TableCell>
                   </TableRow>
                   {isOpen && (
                     <TableRow className="bg-muted/40 hover:bg-muted/40">
                       <TableCell />
-                      <TableCell colSpan={6}>
+                      <TableCell colSpan={7}>
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-1 text-xs py-2">
                           {Object.entries(r.materiales)
                             .filter(([, v]) => v > 0)
@@ -141,13 +181,25 @@ export function RdoTable({ rdos }: { rdos: RDO[] }) {
                             </span>
                           )}
                         </div>
-                        <div className="text-xs text-muted-foreground border-t pt-2 mt-1">
-                          MO:{" "}
-                          <span className="text-foreground tabular-nums">{fmtARS(c.mo)}</span> ·
-                          Materiales:{" "}
-                          <span className="text-foreground tabular-nums">
-                            {fmtARS(c.materiales)}
+                        <div className="text-xs text-muted-foreground border-t pt-2 mt-1 flex flex-wrap gap-x-4">
+                          <span>
+                            MO:{" "}
+                            <span className="text-foreground tabular-nums font-medium">
+                              {fmtARS(c.mo)}
+                            </span>
                           </span>
+                          <span>
+                            Materiales:{" "}
+                            <span className="text-foreground tabular-nums font-medium">
+                              {fmtARS(c.materiales)}
+                            </span>
+                          </span>
+                          {r.notas && (
+                            <span className="basis-full mt-1">
+                              Notas:{" "}
+                              <span className="text-foreground italic">{r.notas}</span>
+                            </span>
+                          )}
                         </div>
                       </TableCell>
                     </TableRow>

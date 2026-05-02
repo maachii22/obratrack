@@ -4,9 +4,6 @@ import dynamic from "next/dynamic";
 import { useMemo, useState } from "react";
 import { useStore } from "@/lib/store";
 import { resumenMensual, statsPorCuadrilla, statsPorObra } from "@/lib/calc";
-import preciosCuadrilla from "@/data/precios-cuadrilla.json";
-import preciosMaterial from "@/data/precios-material.json";
-import egresos from "@/data/egresos.json";
 import { KpiCard } from "@/components/kpi-card";
 import { CostoM2Trend } from "@/components/charts/costo-m2-trend";
 import { M2CuadrillaBars } from "@/components/charts/m2-cuadrilla-bars";
@@ -19,11 +16,6 @@ import {
 } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { fmtARS, fmtM2, fmtMes, mesActual } from "@/lib/formatters";
-import type {
-  PrecioCuadrilla,
-  PrecioMaterial,
-  EgresoMensual,
-} from "@/lib/types";
 import { Hammer, DollarSign, Building2, Wallet, Trophy } from "lucide-react";
 
 const ObrasMap = dynamic(
@@ -39,7 +31,7 @@ const ObrasMap = dynamic(
 );
 
 export default function DashboardPage() {
-  const { rdos } = useStore();
+  const { rdos, preciosCuadrilla, preciosMaterial, egresos } = useStore();
   const meses = useMemo(() => {
     const s = new Set(rdos.map((r) => r.fecha.slice(0, 7)));
     return Array.from(s).sort().reverse();
@@ -50,8 +42,8 @@ export default function DashboardPage() {
     return meses.includes(actual) ? actual : meses[0] ?? actual;
   });
 
-  const pc = preciosCuadrilla as PrecioCuadrilla[];
-  const pm = preciosMaterial as PrecioMaterial[];
+  const pc = preciosCuadrilla;
+  const pm = preciosMaterial;
 
   const resumen = useMemo(() => resumenMensual(rdos, pc, pm), [rdos, pc, pm]);
   const resumenMesActual = resumen.find((r) => r.mes === mes);
@@ -63,7 +55,7 @@ export default function DashboardPage() {
     return new Set(f.map((r) => r.frente)).size;
   }, [rdos, mes]);
 
-  const egresoMes = (egresos as EgresoMensual[]).find((e) => e.mes === mes);
+  const egresoMes = egresos.find((e) => e.mes === mes);
   const totalEgreso = egresoMes
     ? [
         ...egresoMes.impuestos,

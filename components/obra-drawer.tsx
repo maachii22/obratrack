@@ -10,15 +10,9 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { fmtFecha, fmtM2, fmtARS } from "@/lib/formatters";
 import { costoRDO } from "@/lib/calc";
-import type {
-  RDO,
-  PrecioCuadrilla,
-  PrecioMaterial,
-  Materiales,
-} from "@/lib/types";
+import type { RDO, Materiales } from "@/lib/types";
 import { MATERIALES_KEYS } from "@/lib/types";
-import preciosC from "@/data/precios-cuadrilla.json";
-import preciosM from "@/data/precios-material.json";
+import { useStore } from "@/lib/store";
 import { ImageOff } from "lucide-react";
 
 type Props = {
@@ -42,15 +36,14 @@ const emptyMats = (): Materiales => ({
 });
 
 export function ObraDrawer({ frente, rdos, onClose }: Props) {
+  const { preciosCuadrilla, preciosMaterial } = useStore();
   const open = !!frente;
   const obraRdos = rdos
     .filter((r) => r.frente === frente)
     .sort((a, b) => b.fecha.localeCompare(a.fecha));
   const m2Total = obraRdos.reduce((s, r) => s + r.m2, 0);
   const costoTotal = obraRdos.reduce(
-    (s, r) =>
-      s +
-      costoRDO(r, preciosC as PrecioCuadrilla[], preciosM as PrecioMaterial[]).total,
+    (s, r) => s + costoRDO(r, preciosCuadrilla, preciosMaterial).total,
     0
   );
   const matsTotal = MATERIALES_KEYS.reduce((acc, k) => {

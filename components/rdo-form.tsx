@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -21,7 +21,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { Plus } from "lucide-react";
+import { Plus, Pencil } from "lucide-react";
 import { toast } from "sonner";
 import { useStore } from "@/lib/store";
 import {
@@ -35,16 +35,36 @@ import {
 const emptyMateriales = (): Materiales =>
   MATERIALES_KEYS.reduce((acc, k) => ({ ...acc, [k]: 0 }), {} as Materiales);
 
-export function RdoForm() {
-  const { addRDO } = useStore();
+type Props = {
+  rdo?: RDO;
+  trigger?: React.ReactElement;
+};
+
+export function RdoForm({ rdo, trigger }: Props) {
+  const { addRDO, updateRDO } = useStore();
+  const isEdit = !!rdo;
   const [open, setOpen] = useState(false);
-  const [fecha, setFecha] = useState(new Date().toISOString().slice(0, 10));
-  const [frente, setFrente] = useState("");
-  const [cuadrilla, setCuadrilla] = useState<string>(CUADRILLAS[0]);
-  const [m2, setM2] = useState<number>(0);
-  const [trabajo, setTrabajo] = useState<TipoTrabajo>("Baldosas");
-  const [materiales, setMateriales] = useState<Materiales>(emptyMateriales);
-  const [notas, setNotas] = useState("");
+
+  const [fecha, setFecha] = useState(rdo?.fecha ?? new Date().toISOString().slice(0, 10));
+  const [frente, setFrente] = useState(rdo?.frente ?? "");
+  const [cuadrilla, setCuadrilla] = useState<string>(rdo?.cuadrilla ?? CUADRILLAS[0]);
+  const [m2, setM2] = useState<number>(rdo?.m2 ?? 0);
+  const [trabajo, setTrabajo] = useState<TipoTrabajo>(rdo?.trabajo ?? "Baldosas");
+  const [materiales, setMateriales] = useState<Materiales>(rdo?.materiales ?? emptyMateriales());
+  const [notas, setNotas] = useState(rdo?.notas ?? "");
+
+  // Reset form to RDO snapshot whenever opened in edit mode
+  useEffect(() => {
+    if (open && rdo) {
+      setFecha(rdo.fecha);
+      setFrente(rdo.frente);
+      setCuadrilla(rdo.cuadrilla);
+      setM2(rdo.m2);
+      setTrabajo(rdo.trabajo);
+      setMateriales(rdo.materiales);
+      setNotas(rdo.notas ?? "");
+    }
+  }, [open, rdo]);
 
   const reset = () => {
     setFecha(new Date().toISOString().slice(0, 10));
@@ -61,8 +81,8 @@ export function RdoForm() {
       toast.error("Completá frente y m².");
       return;
     }
-    const r: RDO = {
-      id: `rdo-${Date.now()}`,
+    const payload: RDO = {
+      id: rdo?.id ?? `rdo-${Date.now()}`,
       fecha,
       frente: frente.trim(),
       cuadrilla,
@@ -71,29 +91,44 @@ export function RdoForm() {
       materiales,
       notas: notas.trim() || undefined,
     };
-    addRDO(r);
-    toast.success("RDO guardado", {
-      description: "Demo: los datos se reinician al recargar.",
-    });
-    reset();
+    if (isEdit) {
+      updateRDO(rdo!.id, payload);
+      toast.success("RDO actualizado", {
+        description: "Demo: los cambios se reinician al recargar.",
+      });
+    } else {
+      addRDO(payload);
+      toast.success("RDO guardado", {
+        description: "Demo: los datos se reinician al recargar.",
+      });
+      reset();
+    }
     setOpen(false);
   };
 
+  const defaultTrigger = isEdit ? (
+    <Button variant="ghost" size="sm">
+      <Pencil className="h-3.5 w-3.5 mr-1" /> Editar
+    </Button>
+  ) : (
+    <Button>
+      <Plus className="h-4 w-4 mr-2" />
+      Cargar RDO
+    </Button>
+  );
+
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger
-        render={
-          <Button>
-            <Plus className="h-4 w-4 mr-2" />
-            Cargar RDO
-          </Button>
-        }
-      />
+      <DialogTrigger render={trigger ?? defaultTrigger} />
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>Nuevo Reporte Diario de Obra</DialogTitle>
+          <DialogTitle>
+            {isEdit ? "Editar RDO" : "Nuevo Reporte Diario de Obra"}
+          </DialogTitle>
           <DialogDescription>
-            Cargá los datos del trabajo del día. Materiales que no se usaron quedan en 0.
+            {isEdit
+              ? "Modificá los campos que necesites. Los cambios se reflejan en todos los reportes."
+              : "Cargá los datos del trabajo del día. Materiales que no se usaron quedan en 0."}
           </DialogDescription>
         </DialogHeader>
 
@@ -196,7 +231,7 @@ export function RdoForm() {
           </div>
 
           <p className="text-xs text-muted-foreground">
-            En la versión completa, acá se sube foto desde el celular y queda
+            En la versión completa se sube foto desde el celular y queda
             georreferenciada.
           </p>
         </div>
@@ -205,7 +240,7 @@ export function RdoForm() {
           <Button variant="outline" onClick={() => setOpen(false)}>
             Cancelar
           </Button>
-          <Button onClick={submit}>Guardar</Button>
+          <Button onClick={submit}>{isEdit ? "Guardar cambios" : "Guardar"}</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

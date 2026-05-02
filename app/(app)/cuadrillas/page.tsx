@@ -3,8 +3,6 @@
 import { useMemo, useState } from "react";
 import { useStore } from "@/lib/store";
 import { statsPorCuadrilla, resumenMensual } from "@/lib/calc";
-import preciosC from "@/data/precios-cuadrilla.json";
-import preciosM from "@/data/precios-material.json";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Table,
@@ -23,11 +21,11 @@ import {
 } from "@/components/ui/select";
 import { fmtARS, fmtM2, fmtMes, mesActual } from "@/lib/formatters";
 import { M2CuadrillaBars } from "@/components/charts/m2-cuadrilla-bars";
-import { CUADRILLAS, type PrecioCuadrilla, type PrecioMaterial } from "@/lib/types";
+import { CUADRILLAS } from "@/lib/types";
 import { TrendingUp, TrendingDown } from "lucide-react";
 
 export default function CuadrillasPage() {
-  const { rdos } = useStore();
+  const { rdos, preciosCuadrilla, preciosMaterial } = useStore();
   const meses = useMemo(() => {
     const s = new Set(rdos.map((r) => r.fecha.slice(0, 7)));
     return Array.from(s).sort().reverse();
@@ -38,8 +36,8 @@ export default function CuadrillasPage() {
     return meses.includes(actual) ? actual : meses[0] ?? actual;
   });
 
-  const pc = preciosC as PrecioCuadrilla[];
-  const pm = preciosM as PrecioMaterial[];
+  const pc = preciosCuadrilla;
+  const pm = preciosMaterial;
 
   const stats = useMemo(() => statsPorCuadrilla(rdos, mes, pc, pm), [rdos, mes, pc, pm]);
 

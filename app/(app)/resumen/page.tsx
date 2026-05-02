@@ -3,8 +3,6 @@
 import { useMemo } from "react";
 import { useStore } from "@/lib/store";
 import { resumenMensual } from "@/lib/calc";
-import preciosC from "@/data/precios-cuadrilla.json";
-import preciosM from "@/data/precios-material.json";
 import {
   Table,
   TableBody,
@@ -19,13 +17,11 @@ import { Button } from "@/components/ui/button";
 import { fmtARS, fmtM2, fmtMes } from "@/lib/formatters";
 import { Download } from "lucide-react";
 import { toast } from "sonner";
-import type { PrecioCuadrilla, PrecioMaterial } from "@/lib/types";
-
 export default function ResumenPage() {
-  const { rdos } = useStore();
+  const { rdos, preciosCuadrilla, preciosMaterial } = useStore();
   const resumen = useMemo(
-    () => resumenMensual(rdos, preciosC as PrecioCuadrilla[], preciosM as PrecioMaterial[]),
-    [rdos]
+    () => resumenMensual(rdos, preciosCuadrilla, preciosMaterial),
+    [rdos, preciosCuadrilla, preciosMaterial]
   );
 
   const promCostoM2 =

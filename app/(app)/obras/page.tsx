@@ -3,8 +3,6 @@
 import { useMemo, useState } from "react";
 import { useStore } from "@/lib/store";
 import { statsPorObra } from "@/lib/calc";
-import preciosC from "@/data/precios-cuadrilla.json";
-import preciosM from "@/data/precios-material.json";
 import {
   Table,
   TableBody,
@@ -17,18 +15,16 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { fmtFecha, fmtM2, fmtARS } from "@/lib/formatters";
 import { ObraDrawer } from "@/components/obra-drawer";
-import type { PrecioCuadrilla, PrecioMaterial } from "@/lib/types";
-
 export default function ObrasPage() {
-  const { rdos } = useStore();
+  const { rdos, preciosCuadrilla, preciosMaterial } = useStore();
   const [q, setQ] = useState("");
   const [selected, setSelected] = useState<string | null>(null);
 
   const obras = useMemo(() => {
-    return statsPorObra(rdos, preciosC as PrecioCuadrilla[], preciosM as PrecioMaterial[])
+    return statsPorObra(rdos, preciosCuadrilla, preciosMaterial)
       .filter((o) => (q ? o.frente.toLowerCase().includes(q.toLowerCase()) : true))
       .sort((a, b) => b.ultimoDia.localeCompare(a.ultimoDia));
-  }, [rdos, q]);
+  }, [rdos, q, preciosCuadrilla, preciosMaterial]);
 
   return (
     <div className="space-y-5">
