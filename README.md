@@ -4,6 +4,8 @@ Software de gestión para empresas constructoras de veredas y obra civil menor.
 
 > Demo. Reemplaza un Excel multi-hoja por una aplicación web profesional.
 
+**Demo en vivo**: https://obratrack-omega.vercel.app
+
 ## Qué resuelve
 
 - **RDO (Reporte Diario de Obra)** — carga rápida, filtros por fecha/cuadrilla/frente, materiales y costo por día.
