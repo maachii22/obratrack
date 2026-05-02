@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 import path from "node:path";
 
 const nextConfig: NextConfig = {
-  typedRoutes: true,
+  typedRoutes: false,
   turbopack: {
     root: path.resolve(__dirname),
   },
