@@ -1,469 +1,677 @@
 [
   {
     "mes": "2026-01",
-    "impuestos": [],
-    "planesPago": [
+    "impuestos": [
       {
-        "concepto": "PP.V503844",
-        "vencimiento": "16 y 26/mes",
-        "monto": 731239.0
+        "concepto": "IVA",
+        "vencimiento": "20/mes",
+        "monto": 2794908
       },
       {
-        "concepto": "PP.U164330",
+        "concepto": "Ganancias",
+        "vencimiento": "fin de mes",
+        "monto": 2382057
+      }
+    ],
+    "planesPago": [
+      {
+        "concepto": "Plan AFIP 84/2024",
         "vencimiento": "16 y 26/mes",
-        "monto": 594276.94
+        "monto": 720000
+      },
+      {
+        "concepto": "Plan AFIP 12/2025",
+        "vencimiento": "16 y 26/mes",
+        "monto": 580000
       }
     ],
     "costosFijos": [
       {
-        "concepto": "contador",
+        "concepto": "Honorarios contables",
         "vencimiento": null,
-        "monto": 120000.0
+        "monto": 120000
       },
       {
-        "concepto": "seguro saveiro",
-        "vencimiento": "28/MES",
-        "monto": 79827.0
+        "concepto": "Seguro vehículo liviano",
+        "vencimiento": "28/mes",
+        "monto": 80000
       },
       {
-        "concepto": "seguro transit",
-        "vencimiento": "28/MES",
-        "monto": 102958.0
+        "concepto": "Seguro vehículo utilitario",
+        "vencimiento": "28/mes",
+        "monto": 103000
+      },
+      {
+        "concepto": "Alquiler depósito",
+        "vencimiento": "5/mes",
+        "monto": 450000
       }
     ],
-    "costosVariablesEstimados": 6025379.43
+    "costosVariablesEstimados": 5794683
   },
   {
     "mes": "2026-02",
-    "impuestos": [],
+    "impuestos": [
+      {
+        "concepto": "IVA",
+        "vencimiento": "20/mes",
+        "monto": 2986361
+      }
+    ],
     "planesPago": [
       {
-        "concepto": "PP.V503844",
+        "concepto": "Plan AFIP 84/2024",
         "vencimiento": "16 y 26/mes",
-        "monto": 731239.0
+        "monto": 738000
       },
       {
-        "concepto": "PP.V725328",
+        "concepto": "Plan AFIP 12/2025",
         "vencimiento": "16 y 26/mes",
-        "monto": 1758888.09
-      },
-      {
-        "concepto": "PP.U164330",
-        "vencimiento": "16 y 26/mes",
-        "monto": 594276.94
+        "monto": 594500
       }
     ],
     "costosFijos": [
       {
-        "concepto": "contador",
+        "concepto": "Honorarios contables",
         "vencimiento": null,
-        "monto": 120000.0
+        "monto": 123000
       },
       {
-        "concepto": "seguro saveiro",
-        "vencimiento": "28/MES",
-        "monto": 79827.0
+        "concepto": "Seguro vehículo liviano",
+        "vencimiento": "28/mes",
+        "monto": 82000
       },
       {
-        "concepto": "seguro transit",
-        "vencimiento": "28/MES",
-        "monto": 102958.0
+        "concepto": "Seguro vehículo utilitario",
+        "vencimiento": "28/mes",
+        "monto": 105575
+      },
+      {
+        "concepto": "Alquiler depósito",
+        "vencimiento": "5/mes",
+        "monto": 461250
       }
     ],
-    "costosVariablesEstimados": 2214.8
+    "costosVariablesEstimados": 5189054
   },
   {
     "mes": "2026-03",
-    "impuestos": [],
+    "impuestos": [
+      {
+        "concepto": "IVA",
+        "vencimiento": "20/mes",
+        "monto": 3490522
+      }
+    ],
     "planesPago": [
       {
-        "concepto": "PP.V503844",
+        "concepto": "Plan AFIP 84/2024",
         "vencimiento": "16 y 26/mes",
-        "monto": 737942.56
+        "monto": 756450
       },
       {
-        "concepto": "PP.V725328",
+        "concepto": "Plan AFIP 12/2025",
         "vencimiento": "16 y 26/mes",
-        "monto": 1586534.13
-      },
-      {
-        "concepto": "PP.U164330",
-        "vencimiento": "16 y 26/mes",
-        "monto": 608658.44
+        "monto": 609363
       }
     ],
     "costosFijos": [
       {
-        "concepto": "contador",
+        "concepto": "Honorarios contables",
         "vencimiento": null,
-        "monto": 120000.0
+        "monto": 126075
       },
       {
-        "concepto": "seguro saveiro",
-        "vencimiento": "28/MES",
-        "monto": 79827.0
+        "concepto": "Seguro vehículo liviano",
+        "vencimiento": "28/mes",
+        "monto": 84050
       },
       {
-        "concepto": "seguro transit",
-        "vencimiento": "28/MES",
-        "monto": 102958.0
+        "concepto": "Seguro vehículo utilitario",
+        "vencimiento": "28/mes",
+        "monto": 108214
+      },
+      {
+        "concepto": "Alquiler depósito",
+        "vencimiento": "5/mes",
+        "monto": 472781
       }
     ],
-    "costosVariablesEstimados": 2579.4700000000003
+    "costosVariablesEstimados": 8008544
   },
   {
     "mes": "2026-04",
     "impuestos": [
       {
+        "concepto": "IVA",
+        "vencimiento": "20/mes",
+        "monto": 3426431
+      },
+      {
         "concepto": "Ganancias",
-        "vencimiento": "13/mes",
-        "monto": 1147381.56
+        "vencimiento": "fin de mes",
+        "monto": 2085590
       }
     ],
     "planesPago": [
       {
-        "concepto": "PP.V503844",
+        "concepto": "Plan AFIP 84/2024",
         "vencimiento": "16 y 26/mes",
-        "monto": 731239.0
+        "monto": 775361
       },
       {
-        "concepto": "PP.V725328",
+        "concepto": "Plan AFIP 12/2025",
         "vencimiento": "16 y 26/mes",
-        "monto": 1572123.0
-      },
-      {
-        "concepto": "PP.U164330",
-        "vencimiento": "16 y 26/mes",
-        "monto": 594276.94
+        "monto": 624597
       }
     ],
     "costosFijos": [
       {
-        "concepto": "contador",
+        "concepto": "Honorarios contables",
         "vencimiento": null,
-        "monto": 120000.0
+        "monto": 129227
       },
       {
-        "concepto": "seguro saveiro",
-        "vencimiento": "28/MES",
-        "monto": 79827.0
+        "concepto": "Seguro vehículo liviano",
+        "vencimiento": "28/mes",
+        "monto": 86151
       },
       {
-        "concepto": "seguro transit",
-        "vencimiento": "28/MES",
-        "monto": 102958.0
+        "concepto": "Seguro vehículo utilitario",
+        "vencimiento": "28/mes",
+        "monto": 110920
+      },
+      {
+        "concepto": "Alquiler depósito",
+        "vencimiento": "5/mes",
+        "monto": 484601
       }
     ],
-    "costosVariablesEstimados": 0.0
+    "costosVariablesEstimados": 6105143
   },
   {
     "mes": "2026-05",
     "impuestos": [
       {
         "concepto": "IVA",
-        "vencimiento": "18/mes",
-        "monto": 681525.67
+        "vencimiento": "20/mes",
+        "monto": 3743289
       }
     ],
     "planesPago": [
       {
-        "concepto": "PP.V503844",
+        "concepto": "Plan AFIP 84/2024",
         "vencimiento": "16 y 26/mes",
-        "monto": 731239.0
+        "monto": 794745
       },
       {
-        "concepto": "PP.V725328",
+        "concepto": "Plan AFIP 12/2025",
         "vencimiento": "16 y 26/mes",
-        "monto": 1572123.0
+        "monto": 640211
       },
       {
-        "concepto": "PP.U164330",
-        "vencimiento": "16 y 26/mes",
-        "monto": 594276.94
+        "concepto": "Refinanciación moratoria",
+        "vencimiento": "10/mes",
+        "monto": 463601
       }
     ],
     "costosFijos": [
       {
-        "concepto": "contador",
+        "concepto": "Honorarios contables",
         "vencimiento": null,
-        "monto": 120000.0
+        "monto": 132458
       },
       {
-        "concepto": "seguro saveiro",
-        "vencimiento": "28/MES",
-        "monto": 79827.0
+        "concepto": "Seguro vehículo liviano",
+        "vencimiento": "28/mes",
+        "monto": 88305
       },
       {
-        "concepto": "seguro transit",
-        "vencimiento": "28/MES",
-        "monto": 102958.0
+        "concepto": "Seguro vehículo utilitario",
+        "vencimiento": "28/mes",
+        "monto": 113693
+      },
+      {
+        "concepto": "Alquiler depósito",
+        "vencimiento": "5/mes",
+        "monto": 496716
       }
     ],
-    "costosVariablesEstimados": 0.0
+    "costosVariablesEstimados": 8857747
   },
   {
     "mes": "2026-06",
     "impuestos": [
       {
         "concepto": "IVA",
-        "vencimiento": "18/mes",
-        "monto": 3708481.08
+        "vencimiento": "20/mes",
+        "monto": 3650277
       }
     ],
     "planesPago": [
       {
-        "concepto": "PP.V503844",
+        "concepto": "Plan AFIP 84/2024",
         "vencimiento": "16 y 26/mes",
-        "monto": 731239.0
+        "monto": 814614
       },
       {
-        "concepto": "PP.V725328",
+        "concepto": "Plan AFIP 12/2025",
         "vencimiento": "16 y 26/mes",
-        "monto": 1572123.0
+        "monto": 656217
       },
       {
-        "concepto": "PP.U164330",
-        "vencimiento": "16 y 26/mes",
-        "monto": 594276.94
+        "concepto": "Refinanciación moratoria",
+        "vencimiento": "10/mes",
+        "monto": 475191
       }
     ],
     "costosFijos": [
       {
-        "concepto": "contador",
+        "concepto": "Honorarios contables",
         "vencimiento": null,
-        "monto": 120000.0
+        "monto": 135769
       },
       {
-        "concepto": "seguro saveiro",
-        "vencimiento": "28/MES",
-        "monto": 79827.0
+        "concepto": "Seguro vehículo liviano",
+        "vencimiento": "28/mes",
+        "monto": 90513
       },
       {
-        "concepto": "seguro transit",
-        "vencimiento": "28/MES",
-        "monto": 102958.0
+        "concepto": "Seguro vehículo utilitario",
+        "vencimiento": "28/mes",
+        "monto": 116535
+      },
+      {
+        "concepto": "Alquiler depósito",
+        "vencimiento": "5/mes",
+        "monto": 509134
       }
     ],
-    "costosVariablesEstimados": 0.0
+    "costosVariablesEstimados": 0
   },
   {
     "mes": "2026-07",
-    "impuestos": [],
+    "impuestos": [
+      {
+        "concepto": "IVA",
+        "vencimiento": "20/mes",
+        "monto": 3720637
+      },
+      {
+        "concepto": "Ganancias",
+        "vencimiento": "fin de mes",
+        "monto": 2132344
+      }
+    ],
     "planesPago": [
       {
-        "concepto": "PP.V503844",
+        "concepto": "Plan AFIP 84/2024",
         "vencimiento": "16 y 26/mes",
-        "monto": 731239.0
+        "monto": 834979
       },
       {
-        "concepto": "PP.V725328",
+        "concepto": "Plan AFIP 12/2025",
         "vencimiento": "16 y 26/mes",
-        "monto": 1572123.0
+        "monto": 672622
       },
       {
-        "concepto": "PP.U164330",
-        "vencimiento": "16 y 26/mes",
-        "monto": 594276.94
+        "concepto": "Refinanciación moratoria",
+        "vencimiento": "10/mes",
+        "monto": 487071
       }
     ],
     "costosFijos": [
       {
-        "concepto": "contador",
+        "concepto": "Honorarios contables",
         "vencimiento": null,
-        "monto": 120000.0
+        "monto": 139163
       },
       {
-        "concepto": "seguro saveiro",
-        "vencimiento": "28/MES",
-        "monto": 79827.0
+        "concepto": "Seguro vehículo liviano",
+        "vencimiento": "28/mes",
+        "monto": 92775
       },
       {
-        "concepto": "seguro transit",
-        "vencimiento": "28/MES",
-        "monto": 102958.0
+        "concepto": "Seguro vehículo utilitario",
+        "vencimiento": "28/mes",
+        "monto": 119448
+      },
+      {
+        "concepto": "Alquiler depósito",
+        "vencimiento": "5/mes",
+        "monto": 521862
       }
     ],
-    "costosVariablesEstimados": 0.0
+    "costosVariablesEstimados": 0
   },
   {
     "mes": "2026-08",
-    "impuestos": [],
+    "impuestos": [
+      {
+        "concepto": "IVA",
+        "vencimiento": "20/mes",
+        "monto": 3449582
+      }
+    ],
     "planesPago": [
       {
-        "concepto": "PP.V503844",
+        "concepto": "Plan AFIP 84/2024",
         "vencimiento": "16 y 26/mes",
-        "monto": 731239.0
+        "monto": 855854
       },
       {
-        "concepto": "PP.V725328",
+        "concepto": "Plan AFIP 12/2025",
         "vencimiento": "16 y 26/mes",
-        "monto": 1572123.0
+        "monto": 689438
       },
       {
-        "concepto": "PP.U164330",
-        "vencimiento": "16 y 26/mes",
-        "monto": 594276.94
+        "concepto": "Refinanciación moratoria",
+        "vencimiento": "10/mes",
+        "monto": 499248
       }
     ],
     "costosFijos": [
       {
-        "concepto": "contador",
+        "concepto": "Honorarios contables",
         "vencimiento": null,
-        "monto": 120000.0
+        "monto": 142642
       },
       {
-        "concepto": "seguro saveiro",
-        "vencimiento": "28/MES",
-        "monto": 79827.0
+        "concepto": "Seguro vehículo liviano",
+        "vencimiento": "28/mes",
+        "monto": 95095
       },
       {
-        "concepto": "seguro transit",
-        "vencimiento": "28/MES",
-        "monto": 102958.0
+        "concepto": "Seguro vehículo utilitario",
+        "vencimiento": "28/mes",
+        "monto": 122435
+      },
+      {
+        "concepto": "Alquiler depósito",
+        "vencimiento": "5/mes",
+        "monto": 534909
       }
     ],
-    "costosVariablesEstimados": 0.0
+    "costosVariablesEstimados": 0
   },
   {
     "mes": "2026-09",
-    "impuestos": [],
+    "impuestos": [
+      {
+        "concepto": "IVA",
+        "vencimiento": "20/mes",
+        "monto": 3437673
+      }
+    ],
     "planesPago": [
       {
-        "concepto": "PP.U164330",
+        "concepto": "Plan AFIP 84/2024",
         "vencimiento": "16 y 26/mes",
-        "monto": 594276.94
+        "monto": 877250
+      },
+      {
+        "concepto": "Plan AFIP 12/2025",
+        "vencimiento": "16 y 26/mes",
+        "monto": 706674
+      },
+      {
+        "concepto": "Refinanciación moratoria",
+        "vencimiento": "10/mes",
+        "monto": 511729
       }
     ],
     "costosFijos": [
       {
-        "concepto": "contador",
+        "concepto": "Honorarios contables",
         "vencimiento": null,
-        "monto": 120000.0
+        "monto": 146208
       },
       {
-        "concepto": "seguro saveiro",
-        "vencimiento": "28/MES",
-        "monto": 79827.0
+        "concepto": "Seguro vehículo liviano",
+        "vencimiento": "28/mes",
+        "monto": 97472
       },
       {
-        "concepto": "seguro transit",
-        "vencimiento": "28/MES",
-        "monto": 102958.0
+        "concepto": "Seguro vehículo utilitario",
+        "vencimiento": "28/mes",
+        "monto": 125495
+      },
+      {
+        "concepto": "Alquiler depósito",
+        "vencimiento": "5/mes",
+        "monto": 548281
       }
     ],
-    "costosVariablesEstimados": 0.0
+    "costosVariablesEstimados": 0
   },
   {
     "mes": "2026-10",
-    "impuestos": [],
+    "impuestos": [
+      {
+        "concepto": "IVA",
+        "vencimiento": "20/mes",
+        "monto": 3917015
+      },
+      {
+        "concepto": "Ganancias",
+        "vencimiento": "fin de mes",
+        "monto": 2764958
+      }
+    ],
     "planesPago": [
       {
-        "concepto": "PP.U164330",
+        "concepto": "Plan AFIP 84/2024",
         "vencimiento": "16 y 26/mes",
-        "monto": 594276.94
+        "monto": 899181
+      },
+      {
+        "concepto": "Plan AFIP 12/2025",
+        "vencimiento": "16 y 26/mes",
+        "monto": 724341
+      },
+      {
+        "concepto": "Refinanciación moratoria",
+        "vencimiento": "10/mes",
+        "monto": 524522
       }
     ],
     "costosFijos": [
       {
-        "concepto": "contador",
+        "concepto": "Honorarios contables",
         "vencimiento": null,
-        "monto": 120000.0
+        "monto": 149864
       },
       {
-        "concepto": "seguro saveiro",
-        "vencimiento": "28/MES",
-        "monto": 79827.0
+        "concepto": "Seguro vehículo liviano",
+        "vencimiento": "28/mes",
+        "monto": 99909
       },
       {
-        "concepto": "seguro transit",
-        "vencimiento": "28/MES",
-        "monto": 102958.0
+        "concepto": "Seguro vehículo utilitario",
+        "vencimiento": "28/mes",
+        "monto": 128633
+      },
+      {
+        "concepto": "Alquiler depósito",
+        "vencimiento": "5/mes",
+        "monto": 561988
       }
     ],
-    "costosVariablesEstimados": 0.0
+    "costosVariablesEstimados": 0
   },
   {
     "mes": "2026-11",
-    "impuestos": [],
+    "impuestos": [
+      {
+        "concepto": "IVA",
+        "vencimiento": "20/mes",
+        "monto": 3291411
+      }
+    ],
     "planesPago": [
       {
-        "concepto": "PP.U164330",
+        "concepto": "Plan AFIP 12/2025",
         "vencimiento": "16 y 26/mes",
-        "monto": 594276.94
+        "monto": 742449
+      },
+      {
+        "concepto": "Refinanciación moratoria",
+        "vencimiento": "10/mes",
+        "monto": 537636
       }
     ],
     "costosFijos": [
       {
-        "concepto": "contador",
+        "concepto": "Honorarios contables",
         "vencimiento": null,
-        "monto": 120000.0
+        "monto": 153610
       },
       {
-        "concepto": "seguro saveiro",
-        "vencimiento": "28/MES",
-        "monto": 79827.0
+        "concepto": "Seguro vehículo liviano",
+        "vencimiento": "28/mes",
+        "monto": 102407
       },
       {
-        "concepto": "seguro transit",
-        "vencimiento": "28/MES",
-        "monto": 102958.0
+        "concepto": "Seguro vehículo utilitario",
+        "vencimiento": "28/mes",
+        "monto": 131849
+      },
+      {
+        "concepto": "Alquiler depósito",
+        "vencimiento": "5/mes",
+        "monto": 576038
       }
     ],
-    "costosVariablesEstimados": 0.0
+    "costosVariablesEstimados": 0
   },
   {
     "mes": "2026-12",
-    "impuestos": [],
+    "impuestos": [
+      {
+        "concepto": "IVA",
+        "vencimiento": "20/mes",
+        "monto": 4118983
+      }
+    ],
     "planesPago": [
       {
-        "concepto": "PP.U164330",
+        "concepto": "Plan AFIP 12/2025",
         "vencimiento": "16 y 26/mes",
-        "monto": 594276.94
+        "monto": 761010
+      },
+      {
+        "concepto": "Refinanciación moratoria",
+        "vencimiento": "10/mes",
+        "monto": 551076
       }
     ],
     "costosFijos": [
       {
-        "concepto": "contador",
+        "concepto": "Honorarios contables",
         "vencimiento": null,
-        "monto": 120000.0
+        "monto": 157450
       },
       {
-        "concepto": "seguro saveiro",
-        "vencimiento": "28/MES",
-        "monto": 79827.0
+        "concepto": "Seguro vehículo liviano",
+        "vencimiento": "28/mes",
+        "monto": 104967
       },
       {
-        "concepto": "seguro transit",
-        "vencimiento": "28/MES",
-        "monto": 102958.0
+        "concepto": "Seguro vehículo utilitario",
+        "vencimiento": "28/mes",
+        "monto": 135145
+      },
+      {
+        "concepto": "Alquiler depósito",
+        "vencimiento": "5/mes",
+        "monto": 590439
       }
     ],
-    "costosVariablesEstimados": 0.0
+    "costosVariablesEstimados": 0
   },
   {
     "mes": "2027-01",
-    "impuestos": [],
-    "planesPago": [
+    "impuestos": [
       {
-        "concepto": "PP.U164330",
-        "vencimiento": "16 y 26/mes",
-        "monto": 594276.94
+        "concepto": "IVA",
+        "vencimiento": "20/mes",
+        "monto": 4783955
+      },
+      {
+        "concepto": "Ganancias",
+        "vencimiento": "fin de mes",
+        "monto": 2901650
       }
     ],
-    "costosFijos": [],
-    "costosVariablesEstimados": 0.0
+    "planesPago": [
+      {
+        "concepto": "Plan AFIP 12/2025",
+        "vencimiento": "16 y 26/mes",
+        "monto": 780036
+      }
+    ],
+    "costosFijos": [
+      {
+        "concepto": "Honorarios contables",
+        "vencimiento": null,
+        "monto": 161387
+      },
+      {
+        "concepto": "Seguro vehículo liviano",
+        "vencimiento": "28/mes",
+        "monto": 107591
+      },
+      {
+        "concepto": "Seguro vehículo utilitario",
+        "vencimiento": "28/mes",
+        "monto": 138524
+      },
+      {
+        "concepto": "Alquiler depósito",
+        "vencimiento": "5/mes",
+        "monto": 605200
+      }
+    ],
+    "costosVariablesEstimados": 0
   },
   {
     "mes": "2027-02",
-    "impuestos": [],
-    "planesPago": [
+    "impuestos": [
       {
-        "concepto": "PP.U164330",
-        "vencimiento": "16 y 26/mes",
-        "monto": 594276.94
+        "concepto": "IVA",
+        "vencimiento": "20/mes",
+        "monto": 4270829
       }
     ],
-    "costosFijos": [],
-    "costosVariablesEstimados": 0.0
+    "planesPago": [
+      {
+        "concepto": "Plan AFIP 12/2025",
+        "vencimiento": "16 y 26/mes",
+        "monto": 799536
+      }
+    ],
+    "costosFijos": [
+      {
+        "concepto": "Honorarios contables",
+        "vencimiento": null,
+        "monto": 165421
+      },
+      {
+        "concepto": "Seguro vehículo liviano",
+        "vencimiento": "28/mes",
+        "monto": 110281
+      },
+      {
+        "concepto": "Seguro vehículo utilitario",
+        "vencimiento": "28/mes",
+        "monto": 141987
+      },
+      {
+        "concepto": "Alquiler depósito",
+        "vencimiento": "5/mes",
+        "monto": 620330
+      }
+    ],
+    "costosVariablesEstimados": 0
   }
 ]

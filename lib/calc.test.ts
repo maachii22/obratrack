@@ -3,8 +3,8 @@ import { precioVigenteCuadrilla, precioVigenteMaterial, costoRDO, resumenMensual
 import type { PrecioCuadrilla, PrecioMaterial, RDO } from "./types";
 
 const preciosCuadrilla: PrecioCuadrilla[] = [
-  { cuadrilla: "Adrian", vigenciaDesde: "2026-01-01", precioM2: 1000 },
-  { cuadrilla: "Adrian", vigenciaDesde: "2026-03-01", precioM2: 1500 },
+  { cuadrilla: "Sosa", vigenciaDesde: "2026-01-01", precioM2: 1000 },
+  { cuadrilla: "Sosa", vigenciaDesde: "2026-03-01", precioM2: 1500 },
 ];
 
 const preciosMaterial: PrecioMaterial[] = [
@@ -14,16 +14,16 @@ const preciosMaterial: PrecioMaterial[] = [
 
 describe("precioVigenteCuadrilla", () => {
   it("devuelve el precio vigente más reciente antes/igual a la fecha", () => {
-    expect(precioVigenteCuadrilla(preciosCuadrilla, "Adrian", "2026-02-15")).toBe(1000);
-    expect(precioVigenteCuadrilla(preciosCuadrilla, "Adrian", "2026-03-15")).toBe(1500);
+    expect(precioVigenteCuadrilla(preciosCuadrilla, "Sosa", "2026-02-15")).toBe(1000);
+    expect(precioVigenteCuadrilla(preciosCuadrilla, "Sosa", "2026-03-15")).toBe(1500);
   });
 
   it("devuelve 0 si no hay precio vigente para esa fecha", () => {
-    expect(precioVigenteCuadrilla(preciosCuadrilla, "Adrian", "2025-12-31")).toBe(0);
+    expect(precioVigenteCuadrilla(preciosCuadrilla, "Sosa", "2025-12-31")).toBe(0);
   });
 
   it("devuelve 0 si la cuadrilla no existe", () => {
-    expect(precioVigenteCuadrilla(preciosCuadrilla, "Mario", "2026-02-15")).toBe(0);
+    expect(precioVigenteCuadrilla(preciosCuadrilla, "Gomez", "2026-02-15")).toBe(0);
   });
 });
 
@@ -41,7 +41,7 @@ const rdo: RDO = {
   id: "r1",
   fecha: "2026-02-10",
   frente: "Test 100",
-  cuadrilla: "Adrian",
+  cuadrilla: "Sosa",
   m2: 50,
   trabajo: "Baldosas",
   materiales: {
@@ -60,12 +60,12 @@ describe("costoRDO", () => {
   });
 
   it("maneja cuadrillas combinadas (split 50/50)", () => {
-    const split: RDO = { ...rdo, cuadrilla: "Adrian/Mario" };
-    const preciosConMario: PrecioCuadrilla[] = [
+    const split: RDO = { ...rdo, cuadrilla: "Sosa/Gomez" };
+    const preciosConGomez: PrecioCuadrilla[] = [
       ...preciosCuadrilla,
-      { cuadrilla: "Mario", vigenciaDesde: "2026-01-01", precioM2: 800 },
+      { cuadrilla: "Gomez", vigenciaDesde: "2026-01-01", precioM2: 800 },
     ];
-    const c = costoRDO(split, preciosConMario, preciosMaterial);
+    const c = costoRDO(split, preciosConGomez, preciosMaterial);
     expect(c.mo).toBe(50 * (1000 + 800) / 2);
   });
 });
@@ -90,11 +90,11 @@ describe("resumenMensual", () => {
 describe("statsPorCuadrilla", () => {
   it("agrupa por cuadrilla principal (primer nombre antes de /)", () => {
     const rdos: RDO[] = [
-      { ...rdo, id: "a", cuadrilla: "Adrian", m2: 50 },
-      { ...rdo, id: "b", cuadrilla: "Adrian/Mario", m2: 40 },
+      { ...rdo, id: "a", cuadrilla: "Sosa", m2: 50 },
+      { ...rdo, id: "b", cuadrilla: "Sosa/Gomez", m2: 40 },
     ];
     const stats = statsPorCuadrilla(rdos, "2026-02", preciosCuadrilla, preciosMaterial);
-    const adrian = stats.find((s) => s.cuadrilla === "Adrian");
+    const adrian = stats.find((s) => s.cuadrilla === "Sosa");
     expect(adrian).toBeDefined();
     expect(adrian!.m2).toBe(50 + 40);
   });

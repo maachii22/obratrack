@@ -17,6 +17,7 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { fmtARS, fmtM2, fmtMes, mesActual } from "@/lib/formatters";
 import { Hammer, DollarSign, Building2, Wallet, Trophy } from "lucide-react";
+import { CUADRILLAS } from "@/lib/types";
 
 const ObrasMap = dynamic(
   () => import("@/components/obras-map").then((m) => m.ObrasMap),
@@ -71,11 +72,10 @@ export default function DashboardPage() {
 
   const cuadrillasDataChart = useMemo(() => {
     const meses6 = resumen.slice(-6);
-    const cuadrillas = ["Adrian", "Mario", "Tyson", "Matias"];
     return meses6.map((r) => {
       const stats = statsPorCuadrilla(rdos, r.mes, pc, pm);
       const row: { mes: string } & Record<string, string | number> = { mes: r.mes };
-      for (const c of cuadrillas) row[c] = stats.find((s) => s.cuadrilla === c)?.m2 ?? 0;
+      for (const c of CUADRILLAS) row[c] = stats.find((s) => s.cuadrilla === c)?.m2 ?? 0;
       return row;
     });
   }, [rdos, pc, pm, resumen]);
@@ -160,7 +160,7 @@ export default function DashboardPage() {
         <div className="lg:col-span-2">
           <M2CuadrillaBars
             data={cuadrillasDataChart}
-            cuadrillas={["Adrian", "Mario", "Tyson", "Matias"]}
+            cuadrillas={CUADRILLAS as unknown as string[]}
           />
         </div>
         <Card>

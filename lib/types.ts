@@ -1,5 +1,5 @@
-export type Cuadrilla = "Adrian" | "Mario" | "Tyson" | "Matias";
-export const CUADRILLAS: Cuadrilla[] = ["Adrian", "Mario", "Tyson", "Matias"];
+export type Cuadrilla = "Sosa" | "Gomez" | "Pereyra" | "Ramirez";
+export const CUADRILLAS: Cuadrilla[] = ["Sosa", "Gomez", "Pereyra", "Ramirez"];
 
 export type TipoTrabajo = "Baldosas" | "Hormigon";
 

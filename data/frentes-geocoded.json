@@ -1,717 +1,192 @@
 [
   {
-    "direccion": "Arias 4187",
-    "lat": -34.5493681,
-    "lng": -58.4899014
+    "direccion": "California 4625",
+    "lat": -34.639819,
+    "lng": -58.37558
   },
   {
-    "direccion": "Balvin 4130",
-    "lat": -34.5538568474074,
-    "lng": -58.449456847407404
+    "direccion": "California 4659",
+    "lat": -34.645451,
+    "lng": -58.389394
   },
   {
-    "direccion": "Balvin 4134",
-    "lat": -34.5597145380489,
-    "lng": -58.4553145380489
+    "direccion": "Bucarelli 1186",
+    "lat": -34.584683,
+    "lng": -58.483384
   },
   {
-    "direccion": "Balbin 4151",
-    "lat": -34.554928,
-    "lng": -58.4902506
+    "direccion": "Av. Triunvirato 217",
+    "lat": -34.577313,
+    "lng": -58.48403
   },
   {
-    "direccion": "Balbin 4181",
-    "lat": -34.5549388,
-    "lng": -58.4905204
+    "direccion": "Av. Triunvirato 4611",
+    "lat": -34.576528,
+    "lng": -58.489232
   },
   {
-    "direccion": "Correa 3454",
-    "lat": -34.5481384,
-    "lng": -58.4831851
+    "direccion": "Olleros 515",
+    "lat": -34.567584,
+    "lng": -58.466314
   },
   {
-    "direccion": "Deheza 4428",
-    "lat": -34.5499041,
-    "lng": -58.4926586
+    "direccion": "Yerbal 1927",
+    "lat": -34.613811,
+    "lng": -58.440665
   },
   {
-    "direccion": "Holmberg 3797",
-    "lat": -34.5563405,
-    "lng": -58.4864012
+    "direccion": "Acoyte 3341",
+    "lat": -34.619248,
+    "lng": -58.450666
   },
   {
-    "direccion": "Machain 4136",
-    "lat": -34.5545951,
-    "lng": -58.4903941
+    "direccion": "Yerbal 4775",
+    "lat": -34.624695,
+    "lng": -58.443492
   },
   {
-    "direccion": "Vilela 4754",
-    "lat": -34.5560654,
-    "lng": -58.4924468
+    "direccion": "Charcas 1178",
+    "lat": -34.57898,
+    "lng": -58.43713
   },
   {
-    "direccion": "Garcia del rio 4574",
-    "lat": -34.5517586,
-    "lng": -58.4786008
+    "direccion": "Quesada 557",
+    "lat": -34.571222,
+    "lng": -58.491725
   },
   {
-    "direccion": "Valdenegro 4668",
-    "lat": -34.5524485,
-    "lng": -58.4969424
+    "direccion": "Honduras 2675",
+    "lat": -34.579174,
+    "lng": -58.433803
   },
   {
-    "direccion": "Labrador 4034",
-    "lat": -34.5467673,
-    "lng": -58.4704893
+    "direccion": "Juramento 1366",
+    "lat": -34.553561,
+    "lng": -58.449361
   },
   {
-    "direccion": "Ciudad de La Paz 3770",
-    "lat": -34.547647,
-    "lng": -58.4705303
+    "direccion": "Bucarelli 687",
+    "lat": -34.57539,
+    "lng": -58.482896
   },
   {
-    "direccion": "Plaza 4199",
-    "lat": -34.5526689,
-    "lng": -58.4876697
+    "direccion": "Charcas 3880",
+    "lat": -34.585314,
+    "lng": -58.417693
   },
   {
-    "direccion": "Jaramillo 3895",
-    "lat": -34.5550212,
-    "lng": -58.4822704
+    "direccion": "Av. Santa Fe 3800",
+    "lat": -34.581028,
+    "lng": -58.427418
   },
   {
-    "direccion": "Plaza 4433",
-    "lat": -34.5655264,
-    "lng": -58.478838
+    "direccion": "Honduras 1399",
+    "lat": -34.582522,
+    "lng": -58.428834
   },
   {
-    "direccion": "Holmberg 4141",
-    "lat": -34.5535207,
-    "lng": -58.4884092
+    "direccion": "Brandsen 4751",
+    "lat": -34.635852,
+    "lng": -58.379612
   },
   {
-    "direccion": "Besares 4215",
-    "lat": -34.552816,
-    "lng": -58.4883556
+    "direccion": "Av. Cabildo 546",
+    "lat": -34.573098,
+    "lng": -58.455088
   },
   {
-    "direccion": "Manzanares 3980",
-    "lat": -34.5547356,
-    "lng": -58.4834244
+    "direccion": "Bauness 4839",
+    "lat": -34.5787,
+    "lng": -58.494231
   },
   {
-    "direccion": "Tronador 4780",
-    "lat": -34.5478695,
-    "lng": -58.490407
+    "direccion": "Defensa 3862",
+    "lat": -34.639919,
+    "lng": -58.391688
   },
   {
-    "direccion": "Larralde 3492",
-    "lat": -34.5542926,
-    "lng": -58.4776814
+    "direccion": "Thames 2291",
+    "lat": -34.584672,
+    "lng": -58.431312
   },
   {
-    "direccion": "Pico 3623",
-    "lat": -34.5453301,
-    "lng": -58.4863086
+    "direccion": "Rojas 2599",
+    "lat": -34.624894,
+    "lng": -58.432524
   },
   {
-    "direccion": "Pico 3647",
-    "lat": -34.5454197,
-    "lng": -58.4864814
+    "direccion": "Pareja 887",
+    "lat": -34.575296,
+    "lng": -58.498398
   },
   {
-    "direccion": "Pico 3583",
-    "lat": -34.5450897,
-    "lng": -58.4858321
+    "direccion": "Acoyte 1441",
+    "lat": -34.626348,
+    "lng": -58.446668
   },
   {
-    "direccion": "Pico 3060",
-    "lat": -34.5427903,
-    "lng": -58.4804491
+    "direccion": "Echeverría 3835",
+    "lat": -34.552396,
+    "lng": -58.466639
   },
   {
-    "direccion": "Superi 4375",
-    "lat": -34.5480567,
-    "lng": -58.4824975
+    "direccion": "Rojas 2415",
+    "lat": -34.614952,
+    "lng": -58.434645
   },
   {
-    "direccion": "Deheza 3343",
-    "lat": -34.5447431,
-    "lng": -58.4831326
+    "direccion": "Juramento 1075",
+    "lat": -34.549878,
+    "lng": -58.444557
   },
   {
-    "direccion": "Roqueperez 4861",
-    "lat": -34.56854772257011,
-    "lng": -58.46414772257011
+    "direccion": "Brasil 1556",
+    "lat": -34.64524,
+    "lng": -58.391357
   },
   {
-    "direccion": "Correa 3588",
-    "lat": -34.5487537,
-    "lng": -58.4843914
+    "direccion": "Brasil 3562",
+    "lat": -34.63088,
+    "lng": -58.38706
   },
   {
-    "direccion": "Conde 4369",
-    "lat": -34.5476177,
-    "lng": -58.4815041
+    "direccion": "Yerbal 306",
+    "lat": -34.621974,
+    "lng": -58.434519
   },
   {
-    "direccion": "Conde 4282",
-    "lat": -34.5484076,
-    "lng": -58.481226
+    "direccion": "Soler 4401",
+    "lat": -34.580553,
+    "lng": -58.423402
   },
   {
-    "direccion": "Correa 3470",
-    "lat": -34.5482005,
-    "lng": -58.4833051
+    "direccion": "Av. La Plata 4357",
+    "lat": -34.622525,
+    "lng": -58.446653
   },
   {
-    "direccion": "Machain 4004",
-    "lat": -34.555568,
-    "lng": -58.4897559
+    "direccion": "Bucarelli 1459",
+    "lat": -34.575147,
+    "lng": -58.49617
   },
   {
-    "direccion": "Machain 3906",
-    "lat": -34.5563262,
-    "lng": -58.4892303
+    "direccion": "Bonpland 403",
+    "lat": -34.573947,
+    "lng": -58.42991
   },
   {
-    "direccion": "Garcia del rio 4572",
-    "lat": -34.5517586,
-    "lng": -58.4786008
+    "direccion": "Gorriti 3084",
+    "lat": -34.579581,
+    "lng": -58.428436
   },
   {
-    "direccion": "Lugones 4102",
-    "lat": -34.5557021,
-    "lng": -58.4921121
+    "direccion": "Av. La Plata 2140",
+    "lat": -34.625008,
+    "lng": -58.440155
   },
   {
-    "direccion": "Acha 4974",
-    "lat": -34.5486512,
-    "lng": -58.4958042
-  },
-  {
-    "direccion": "Acha 4030",
-    "lat": -34.5558576,
-    "lng": -58.4907844
-  },
-  {
-    "direccion": "Machain 4190",
-    "lat": -34.5542506,
-    "lng": -58.4906165
-  },
-  {
-    "direccion": "Valdenegro 4464",
-    "lat": -34.5540698,
-    "lng": -58.4958283
-  },
-  {
-    "direccion": "Ruiz Huidobro 4538",
-    "lat": -34.5541151,
-    "lng": -58.492363
-  },
-  {
-    "direccion": "Ruiz Huidobro 4402",
-    "lat": -34.5535195,
-    "lng": -58.4911999
-  },
-  {
-    "direccion": "Montes 4388",
-    "lat": -34.5489392,
-    "lng": -58.4939704
-  },
-  {
-    "direccion": "Cabildo 3902",
-    "lat": -34.5475654,
-    "lng": -58.4698413
-  },
-  {
-    "direccion": "Balbin 4131",
-    "lat": -34.5548942,
-    "lng": -58.4895925
-  },
-  {
-    "direccion": "Balbin 4193",
-    "lat": -34.5549431,
-    "lng": -58.4906283
-  },
-  {
-    "direccion": "Donado 4080",
-    "lat": -34.5693195,
-    "lng": -58.478289
-  },
-  {
-    "direccion": "Pico 3510",
-    "lat": -34.5449181,
-    "lng": -58.485225
-  },
-  {
-    "direccion": "Pinto 4490",
-    "lat": -34.5458945,
-    "lng": -58.4805052
-  },
-  {
-    "direccion": "Pinto 3740",
-    "lat": -34.551492,
-    "lng": -58.4761941
-  },
-  {
-    "direccion": "Pico 3597",
-    "lat": -34.5451439,
-    "lng": -58.485931
-  },
-  {
-    "direccion": "Pico 3627",
-    "lat": -34.545345,
-    "lng": -58.4863374
-  },
-  {
-    "direccion": "Colodrero 2785",
-    "lat": -34.5708746,
-    "lng": -58.4877101
-  },
-  {
-    "direccion": "Tamborini 4526",
-    "lat": -34.563267,
-    "lng": -58.4856075
-  },
-  {
-    "direccion": "Monroe 4854",
-    "lat": -34.5726884,
-    "lng": -58.4833537
-  },
-  {
-    "direccion": "Monroe 5556",
-    "lat": -34.577345,
-    "lng": -58.4914412
-  },
-  {
-    "direccion": "Monroe 5554",
-    "lat": -34.5773354,
-    "lng": -58.4914248
-  },
-  {
-    "direccion": "Tamborini 4606",
-    "lat": -34.5636898,
-    "lng": -58.4864459
-  },
-  {
-    "direccion": "Acha 3360",
-    "lat": -34.5625579,
-    "lng": -58.4859818
-  },
-  {
-    "direccion": "Acha 3364",
-    "lat": -34.5625346,
-    "lng": -58.486004
-  },
-  {
-    "direccion": "Nahuel Huapi 5099",
-    "lat": -34.5711871,
-    "lng": -58.4889703
-  },
-  {
-    "direccion": "Estomba 3695",
-    "lat": -34.5557394,
-    "lng": -58.4831349
-  },
-  {
-    "direccion": "Nahuel Huapi 4724",
-    "lat": -34.5690802,
-    "lng": -58.4845584
-  },
-  {
-    "direccion": "Diaz Colodrero 2641",
-    "lat": -34.5718825,
-    "lng": -58.4869067
-  },
-  {
-    "direccion": "Diaz Colodrero 2642",
-    "lat": -34.5719938,
-    "lng": -58.4870823
-  },
-  {
-    "direccion": "Quesada 5056",
-    "lat": -34.5680227,
-    "lng": -58.4892703
-  },
-  {
-    "direccion": "Tamborini 4680",
-    "lat": -34.5639261,
-    "lng": -58.4869616
-  },
-  {
-    "direccion": "Lugones 3316",
-    "lat": -34.5634173,
-    "lng": -58.486604
-  },
-  {
-    "direccion": "Acha 3172",
-    "lat": -34.5644536,
-    "lng": -58.484261
-  },
-  {
-    "direccion": "Galvan 3512",
-    "lat": -34.5624739,
-    "lng": -58.4912064
-  },
-  {
-    "direccion": "Miller 3305",
-    "lat": -34.56378,
-    "lng": -58.4873532
-  },
-  {
-    "direccion": "Diaz Colodrero 3047",
-    "lat": -34.5687394,
-    "lng": -58.4894307
-  },
-  {
-    "direccion": "Lugones 3305",
-    "lat": -34.563327,
-    "lng": -58.4863564
-  },
-  {
-    "direccion": "Nazca 5492",
-    "lat": -34.5800496,
-    "lng": -58.5079335
-  },
-  {
-    "direccion": "Galvan 3183",
-    "lat": -34.5660911,
-    "lng": -58.4880461
-  },
-  {
-    "direccion": "Quesada 4397",
-    "lat": -34.5645706,
-    "lng": -58.4829778
-  },
-  {
-    "direccion": "Nuñes 4825",
-    "lat": -34.563717022413,
-    "lng": -58.459317022413
-  },
-  {
-    "direccion": "Quesada 4706",
-    "lat": -34.5660989,
-    "lng": -58.4855974
-  },
-  {
-    "direccion": "Chajari 4431",
-    "lat": -34.5581616,
-    "lng": -58.4869906
-  },
-  {
-    "direccion": "Ibera 4558",
-    "lat": -34.5643826,
-    "lng": -58.4849065
-  },
-  {
-    "direccion": "Lugones 3297",
-    "lat": -34.5635944,
-    "lng": -58.486145
-  },
-  {
-    "direccion": "Galvan 3516",
-    "lat": -34.5624262,
-    "lng": -58.4912398
-  },
-  {
-    "direccion": "Nuñez 4251",
-    "lat": -34.559258,
-    "lng": -58.4840567
-  },
-  {
-    "direccion": "Diaz Colodrero 3015",
-    "lat": -34.5689859,
-    "lng": -58.4892368
-  },
-  {
-    "direccion": "Galvan 3524",
-    "lat": -34.562331,
-    "lng": -58.4913066
-  },
-  {
-    "direccion": "Galvan 3536",
-    "lat": -34.5621882,
-    "lng": -58.4914068
-  },
-  {
-    "direccion": "Diaz Colodrero 3029",
-    "lat": -34.5688781,
-    "lng": -58.4893216
-  },
-  {
-    "direccion": "Quesada 4615",
-    "lat": -34.5655315,
-    "lng": -58.4848129
-  },
-  {
-    "direccion": "Manzanares 4402",
-    "lat": -34.5568289,
-    "lng": -58.4876303
-  },
-  {
-    "direccion": "Machain 3458",
-    "lat": -34.5610846,
-    "lng": -58.4859378
-  },
-  {
-    "direccion": "Acha 3168",
-    "lat": -34.5644831,
-    "lng": -58.484233
-  },
-  {
-    "direccion": "Holmberg 3804",
-    "lat": -34.5561762,
-    "lng": -58.4867657
-  },
-  {
-    "direccion": "Quesada 5074",
-    "lat": -34.5681221,
-    "lng": -58.4894603
-  },
-  {
-    "direccion": "Acha 3160",
-    "lat": -34.5645421,
-    "lng": -58.484177
-  },
-  {
-    "direccion": "Quesada 5070",
-    "lat": -34.5681,
-    "lng": -58.4894181
-  },
-  {
-    "direccion": "Congreson 4862",
-    "lat": -34.55744868650625,
-    "lng": -58.45304868650625
-  },
-  {
-    "direccion": "Nahuel Huapi 4600",
-    "lat": -34.5682823,
-    "lng": -58.4832458
-  },
-  {
-    "direccion": "Valdenegro 3523",
-    "lat": -34.5618201,
-    "lng": -58.4902093
-  },
-  {
-    "direccion": "Manzanares 4996",
-    "lat": -34.5595359,
-    "lng": -58.4929338
-  },
-  {
-    "direccion": "Manzanares 3895",
-    "lat": -34.5542831,
-    "lng": -58.4828954
-  },
-  {
-    "direccion": "Balbin 3271",
-    "lat": -34.5577051,
-    "lng": -58.4768414
-  },
-  {
-    "direccion": "Plaza 3886",
-    "lat": -34.5554058,
-    "lng": -58.4864035
-  },
-  {
-    "direccion": "Nahuel Huapi 4754",
-    "lat": -34.569212,
-    "lng": -58.484767
-  },
-  {
-    "direccion": "Machain 3045",
-    "lat": -34.5651755,
-    "lng": -58.4826157
-  },
-  {
-    "direccion": "Balbin 4290",
-    "lat": -34.5552692,
-    "lng": -58.4919785
-  },
-  {
-    "direccion": "Jaramillo 3566",
-    "lat": -34.5535693,
-    "lng": -58.4791924
-  },
-  {
-    "direccion": "Garcia del rio 3840",
-    "lat": -34.5533957,
-    "lng": -58.4829683
-  },
-  {
-    "direccion": "Deheza 3375",
-    "lat": -34.5448522,
-    "lng": -58.4833425
-  },
-  {
-    "direccion": "Quesada 4404",
-    "lat": -34.5648883,
-    "lng": -58.4831729
-  },
-  {
-    "direccion": "Quesada 4123",
-    "lat": -34.5635021,
-    "lng": -58.4809018
-  },
-  {
-    "direccion": "P. Achira 4961",
-    "lat": -34.560442,
-    "lng": -58.4917919
-  },
-  {
-    "direccion": "Valdenegro 2889",
-    "lat": -34.5680466,
-    "lng": -58.4849122
-  },
-  {
-    "direccion": "Crisologo Larralde 3003",
-    "lat": -34.5519577,
-    "lng": -58.4737722
-  },
-  {
-    "direccion": "Vidal 4069",
-    "lat": -34.5467684,
-    "lng": -58.4743051
-  },
-  {
-    "direccion": "Cabildo 2653",
-    "lat": -34.55694,
-    "lng": -58.4609004
-  },
-  {
-    "direccion": "Juramento 4472",
-    "lat": -34.5738937,
-    "lng": -58.4766334
-  },
-  {
-    "direccion": "Ciudad de la Paz 2284",
-    "lat": -34.5609581,
-    "lng": -58.4591959
-  },
-  {
-    "direccion": "Juramento 2666",
-    "lat": -34.5635107,
-    "lng": -58.4590758
-  },
-  {
-    "direccion": "Manzanares 3105",
-    "lat": -34.5506594,
-    "lng": -58.4759562
-  },
-  {
-    "direccion": "Olleros 2864",
-    "lat": -34.5748455,
-    "lng": -58.4463755
-  },
-  {
-    "direccion": "Echeverria 3010",
-    "lat": -34.5664476,
-    "lng": -58.461626
-  },
-  {
-    "direccion": "Olleros 2192",
-    "lat": -34.5685276,
-    "lng": -58.4418099
-  },
-  {
-    "direccion": "Migueletes 2047",
-    "lat": -34.556497,
-    "lng": -58.4461714
-  },
-  {
-    "direccion": "Ciudad de la Paz 3078",
-    "lat": -34.5544014,
-    "lng": -58.4654258
-  },
-  {
-    "direccion": "Echeverria 4209",
-    "lat": -34.5733155,
-    "lng": -58.4735541
-  },
-  {
-    "direccion": "Crisologo Larralde 2980",
-    "lat": -34.5518735,
-    "lng": -58.4732816
-  },
-  {
-    "direccion": "Cuba 4251",
-    "lat": -34.543049,
-    "lng": -58.4695896
-  },
-  {
-    "direccion": "Migueletes 3849",
-    "lat": -34.554188,
-    "lng": -58.448268
-  },
-  {
-    "direccion": "Cabildo 2937",
-    "lat": -34.5549786,
-    "lng": -58.4627394
-  },
-  {
-    "direccion": "Galvan 4360",
-    "lat": -34.5619804,
-    "lng": -58.4914582
-  },
-  {
-    "direccion": "Ciudad de la Paz 2221",
-    "lat": -34.5613946,
-    "lng": -58.4586159
-  },
-  {
-    "direccion": "Echeverria 3728",
-    "lat": -34.5708514,
-    "lng": -58.4688514
-  },
-  {
-    "direccion": "Vidal 2681",
-    "lat": -34.5590988,
-    "lng": -58.4646348
-  },
-  {
-    "direccion": "Cuba 3168",
-    "lat": -34.5513565,
-    "lng": -58.4636977
-  },
-  {
-    "direccion": "Galvan 4220",
-    "lat": -34.5619804,
-    "lng": -58.4914582
-  },
-  {
-    "direccion": "Olleros 4437",
-    "lat": -34.5843315,
-    "lng": -58.4520503
-  },
-  {
-    "direccion": "Galvan 4315",
-    "lat": -34.56864,
-    "lng": -58.4859326
-  },
-  {
-    "direccion": "Olleros 2038",
-    "lat": -34.567655,
-    "lng": -58.4408773
-  },
-  {
-    "direccion": "Vidal 3513",
-    "lat": -34.5518698,
-    "lng": -58.4711076
-  },
-  {
-    "direccion": "Olleros 2550",
-    "lat": -34.5718394,
-    "lng": -58.4445282
-  },
-  {
-    "direccion": "Iberá 3081",
-    "lat": -34.5567997,
-    "lng": -58.4706757
-  },
-  {
-    "direccion": "Iberá 3072",
-    "lat": -34.5569071,
-    "lng": -58.4704892
+    "direccion": "Bucarelli 3703",
+    "lat": -34.567442,
+    "lng": -58.488442
   }
 ]
