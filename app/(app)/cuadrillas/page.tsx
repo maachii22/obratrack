@@ -75,16 +75,19 @@ export default function CuadrillasPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-wrap items-center justify-between gap-3">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between pb-2 border-b">
         <div>
-          <h1 className="text-3xl font-semibold tracking-tight">Cuadrillas</h1>
-          <p className="text-sm text-muted-foreground">
-            Productividad y costo por cuadrilla · {fmtMes(mes)}
+          <p className="text-xs text-muted-foreground uppercase tracking-wider font-medium mb-1">
+            Productividad · {fmtMes(mes)}
+          </p>
+          <h1 className="text-2xl md:text-3xl font-semibold tracking-tight">Cuadrillas</h1>
+          <p className="text-sm text-muted-foreground mt-1">
+            Comparativa de m²/día y costo/m² mes a mes.
           </p>
         </div>
         <Select value={mes} onValueChange={(v) => v && setMes(v)}>
-          <SelectTrigger className="w-[180px]">
-            <SelectValue />
+          <SelectTrigger className="w-full sm:w-[180px]">
+            <SelectValue>{(v) => fmtMes(v as string)}</SelectValue>
           </SelectTrigger>
           <SelectContent>
             {meses.map((m) => (
@@ -153,15 +156,16 @@ export default function CuadrillasPage() {
       <Card>
         <CardHeader>
           <CardTitle className="text-base">Costo / m² por cuadrilla por mes</CardTitle>
+          <p className="text-xs text-muted-foreground sm:hidden">Deslizá horizontal →</p>
         </CardHeader>
-        <CardContent>
+        <CardContent className="px-0 sm:px-6">
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Cuadrilla</TableHead>
+                  <TableHead className="sticky left-0 bg-card z-10 min-w-[100px]">Cuadrilla</TableHead>
                   {meses6.map((m) => (
-                    <TableHead key={m} className="text-right">
+                    <TableHead key={m} className="text-right whitespace-nowrap">
                       {fmtMes(m)}
                     </TableHead>
                   ))}
@@ -170,9 +174,11 @@ export default function CuadrillasPage() {
               <TableBody>
                 {tablaRows.map((row) => (
                   <TableRow key={row.cuadrilla as string}>
-                    <TableCell className="font-medium">{row.cuadrilla}</TableCell>
+                    <TableCell className="font-medium sticky left-0 bg-card z-10">
+                      {row.cuadrilla}
+                    </TableCell>
                     {meses6.map((m) => (
-                      <TableCell key={m} className="text-right tabular-nums">
+                      <TableCell key={m} className="text-right tabular-nums whitespace-nowrap">
                         {(row[m] as number) > 0 ? fmtARS(row[m] as number) : "—"}
                       </TableCell>
                     ))}

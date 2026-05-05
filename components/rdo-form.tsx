@@ -44,6 +44,7 @@ export function RdoForm({ rdo, trigger }: Props) {
   const { addRDO, updateRDO } = useStore();
   const isEdit = !!rdo;
   const [open, setOpen] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const [fecha, setFecha] = useState(rdo?.fecha ?? new Date().toISOString().slice(0, 10));
   const [frente, setFrente] = useState(rdo?.frente ?? "");
@@ -64,6 +65,7 @@ export function RdoForm({ rdo, trigger }: Props) {
       setMateriales(rdo.materiales);
       setNotas(rdo.notas ?? "");
     }
+    if (!open) setSubmitted(false);
   }, [open, rdo]);
 
   const reset = () => {
@@ -74,9 +76,14 @@ export function RdoForm({ rdo, trigger }: Props) {
     setTrabajo("Baldosas");
     setMateriales(emptyMateriales());
     setNotas("");
+    setSubmitted(false);
   };
 
+  const frenteInvalid = submitted && !frente.trim();
+  const m2Invalid = submitted && m2 <= 0;
+
   const submit = () => {
+    setSubmitted(true);
     if (!frente.trim() || m2 <= 0) {
       toast.error("Completá frente y m².");
       return;
@@ -133,7 +140,7 @@ export function RdoForm({ rdo, trigger }: Props) {
         </DialogHeader>
 
         <div className="grid gap-4 py-2">
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div className="space-y-1.5">
               <Label htmlFor="fecha">Fecha</Label>
               <Input
@@ -144,13 +151,20 @@ export function RdoForm({ rdo, trigger }: Props) {
               />
             </div>
             <div className="space-y-1.5">
-              <Label htmlFor="frente">Frente / dirección</Label>
+              <Label htmlFor="frente">
+                Frente / dirección <span className="text-destructive">*</span>
+              </Label>
               <Input
                 id="frente"
                 placeholder="Av. Cabildo 1234"
                 value={frente}
                 onChange={(e) => setFrente(e.target.value)}
+                aria-invalid={frenteInvalid}
+                className={frenteInvalid ? "border-destructive focus-visible:ring-destructive/30" : ""}
               />
+              {frenteInvalid && (
+                <p className="text-xs text-destructive">Indicá la dirección.</p>
+              )}
             </div>
             <div className="space-y-1.5">
               <Label>Cuadrilla</Label>
@@ -168,17 +182,25 @@ export function RdoForm({ rdo, trigger }: Props) {
               </Select>
             </div>
             <div className="space-y-1.5">
-              <Label htmlFor="m2">M² ejecutados</Label>
+              <Label htmlFor="m2">
+                M² ejecutados <span className="text-destructive">*</span>
+              </Label>
               <Input
                 id="m2"
                 type="number"
                 min={0}
                 step={0.1}
-                value={m2}
+                value={m2 || ""}
                 onChange={(e) => setM2(parseFloat(e.target.value) || 0)}
+                placeholder="0"
+                aria-invalid={m2Invalid}
+                className={m2Invalid ? "border-destructive focus-visible:ring-destructive/30" : ""}
               />
+              {m2Invalid && (
+                <p className="text-xs text-destructive">M² debe ser mayor a 0.</p>
+              )}
             </div>
-            <div className="space-y-1.5 col-span-2">
+            <div className="space-y-1.5 sm:col-span-2">
               <Label>Tipo de trabajo</Label>
               <Select value={trabajo} onValueChange={(v) => v && setTrabajo(v as TipoTrabajo)}>
                 <SelectTrigger>
@@ -194,10 +216,10 @@ export function RdoForm({ rdo, trigger }: Props) {
 
           <div>
             <p className="text-sm font-medium mb-2">Materiales</p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
               {MATERIALES_KEYS.map((k) => (
                 <div key={k} className="space-y-1">
-                  <Label htmlFor={k} className="text-xs capitalize">
+                  <Label htmlFor={k} className="text-[11px] capitalize text-muted-foreground">
                     {k}
                   </Label>
                   <Input
@@ -205,13 +227,14 @@ export function RdoForm({ rdo, trigger }: Props) {
                     type="number"
                     min={0}
                     step={0.1}
-                    value={materiales[k]}
+                    value={materiales[k] || ""}
                     onChange={(e) =>
                       setMateriales((m) => ({
                         ...m,
                         [k]: parseFloat(e.target.value) || 0,
                       }))
                     }
+                    placeholder="0"
                     className="h-9"
                   />
                 </div>
@@ -229,18 +252,15 @@ export function RdoForm({ rdo, trigger }: Props) {
               placeholder="Observaciones, incidencias..."
             />
           </div>
-
-          <p className="text-xs text-muted-foreground">
-            En la versión completa se sube foto desde el celular y queda
-            georreferenciada.
-          </p>
         </div>
 
-        <DialogFooter>
-          <Button variant="outline" onClick={() => setOpen(false)}>
+        <DialogFooter className="flex-col-reverse gap-2 sm:flex-row sm:gap-0">
+          <Button variant="outline" onClick={() => setOpen(false)} className="w-full sm:w-auto">
             Cancelar
           </Button>
-          <Button onClick={submit}>{isEdit ? "Guardar cambios" : "Guardar"}</Button>
+          <Button onClick={submit} className="w-full sm:w-auto">
+            {isEdit ? "Guardar cambios" : "Guardar RDO"}
+          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

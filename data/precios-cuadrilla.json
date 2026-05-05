@@ -1,22 +1,14 @@
 [
-  {
-    "cuadrilla": "Adrian",
-    "vigenciaDesde": "2026-01-01",
-    "precioM2": 1.0
-  },
-  {
-    "cuadrilla": "Mario",
-    "vigenciaDesde": "2026-02-01",
-    "precioM2": 1.0
-  },
-  {
-    "cuadrilla": "Tyson",
-    "vigenciaDesde": "2026-01-01",
-    "precioM2": 1.0
-  },
-  {
-    "cuadrilla": "Matias",
-    "vigenciaDesde": "2026-01-01",
-    "precioM2": 1.0
-  }
+  { "cuadrilla": "Adrian", "vigenciaDesde": "2025-11-01", "precioM2": 8500 },
+  { "cuadrilla": "Adrian", "vigenciaDesde": "2026-02-01", "precioM2": 9800 },
+  { "cuadrilla": "Adrian", "vigenciaDesde": "2026-04-01", "precioM2": 11200 },
+  { "cuadrilla": "Mario", "vigenciaDesde": "2025-11-01", "precioM2": 8200 },
+  { "cuadrilla": "Mario", "vigenciaDesde": "2026-02-01", "precioM2": 9500 },
+  { "cuadrilla": "Mario", "vigenciaDesde": "2026-04-01", "precioM2": 10800 },
+  { "cuadrilla": "Tyson", "vigenciaDesde": "2025-11-01", "precioM2": 9000 },
+  { "cuadrilla": "Tyson", "vigenciaDesde": "2026-03-01", "precioM2": 10500 },
+  { "cuadrilla": "Tyson", "vigenciaDesde": "2026-05-01", "precioM2": 12000 },
+  { "cuadrilla": "Matias", "vigenciaDesde": "2025-11-01", "precioM2": 8800 },
+  { "cuadrilla": "Matias", "vigenciaDesde": "2026-02-01", "precioM2": 10000 },
+  { "cuadrilla": "Matias", "vigenciaDesde": "2026-04-15", "precioM2": 11500 }
 ]

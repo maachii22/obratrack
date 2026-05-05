@@ -24,7 +24,7 @@ const ObrasMap = dynamic(
     ssr: false,
     loading: () => (
       <Card>
-        <CardContent className="h-[420px] animate-pulse bg-muted/30" />
+        <CardContent className="h-[340px] sm:h-[400px] animate-pulse bg-muted/30" />
       </Card>
     ),
   }
@@ -91,18 +91,18 @@ export default function DashboardPage() {
 
   return (
     <div className="space-y-6">
-      <header className="flex flex-wrap items-end justify-between gap-3 pb-2 border-b">
+      <header className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between pb-2 border-b">
         <div>
           <p className="text-xs text-muted-foreground uppercase tracking-wider font-medium mb-1">
             Vista general · {fmtMes(mes)}
           </p>
-          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">
+          <h1 className="text-2xl md:text-4xl font-semibold tracking-tight">
             Dashboard
           </h1>
         </div>
         <Select value={mes} onValueChange={(v) => v && setMes(v)}>
-          <SelectTrigger className="w-[200px] h-10">
-            <SelectValue />
+          <SelectTrigger className="w-full sm:w-[200px] h-10">
+            <SelectValue>{(v) => fmtMes(v as string)}</SelectValue>
           </SelectTrigger>
           <SelectContent>
             {meses.map((m) => (

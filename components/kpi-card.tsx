@@ -30,18 +30,18 @@ export function KpiCard({ label, value, delta, hint, icon: Icon, accent = "prima
 
   return (
     <Card className="relative overflow-hidden group hover:shadow-md transition-shadow">
-      <CardContent className="p-5">
-        <div className="flex items-start justify-between gap-3 mb-3">
-          <p className="text-xs uppercase tracking-wide text-muted-foreground font-medium">
+      <CardContent className="p-4 sm:p-5">
+        <div className="flex items-start justify-between gap-2 mb-2.5 sm:mb-3">
+          <p className="text-[10px] sm:text-xs uppercase tracking-wide text-muted-foreground font-medium leading-tight">
             {label}
           </p>
           {Icon && (
-            <div className={`h-9 w-9 rounded-lg ${a.bg} flex items-center justify-center shrink-0`}>
+            <div className={`h-8 w-8 sm:h-9 sm:w-9 rounded-lg ${a.bg} flex items-center justify-center shrink-0`}>
               <Icon className={`h-4 w-4 ${a.text}`} />
             </div>
           )}
         </div>
-        <p className="text-3xl font-semibold tracking-tight tabular-nums leading-none mb-2">
+        <p className="text-2xl sm:text-3xl font-semibold tracking-tight tabular-nums leading-none mb-2">
           {value}
         </p>
         <div className="flex items-center gap-2 text-xs">

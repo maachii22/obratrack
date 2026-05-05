@@ -1,74 +1,23 @@
 [
-  {
-    "material": "Baldosas",
-    "vigenciaDesde": "2026-01-01",
-    "precio": 1.0,
-    "unidad": "m²"
-  },
-  {
-    "material": "Baldosas",
-    "vigenciaDesde": "2026-03-01",
-    "precio": 1.0,
-    "unidad": "m²"
-  },
-  {
-    "material": "Baldosas",
-    "vigenciaDesde": "2026-04-15",
-    "precio": 1.0,
-    "unidad": "m²"
-  },
-  {
-    "material": "Volquetes",
-    "vigenciaDesde": "2026-01-01",
-    "precio": 1.0,
-    "unidad": "m²"
-  },
-  {
-    "material": "Volquetes",
-    "vigenciaDesde": "2026-02-01",
-    "precio": 1.0,
-    "unidad": "m²"
-  },
-  {
-    "material": "Caños",
-    "vigenciaDesde": "2026-01-01",
-    "precio": 1.0,
-    "unidad": "u"
-  },
-  {
-    "material": "Arena",
-    "vigenciaDesde": "2026-01-01",
-    "precio": 1.0,
-    "unidad": "u"
-  },
-  {
-    "material": "Cal",
-    "vigenciaDesde": "2026-01-01",
-    "precio": 1.0,
-    "unidad": "u"
-  },
-  {
-    "material": "Cemento",
-    "vigenciaDesde": "2026-01-01",
-    "precio": 1.0,
-    "unidad": "u"
-  },
-  {
-    "material": "Polietileno",
-    "vigenciaDesde": "2026-01-01",
-    "precio": 1.0,
-    "unidad": "u"
-  },
-  {
-    "material": "Seña Pallet",
-    "vigenciaDesde": "2026-01-01",
-    "precio": 1.0,
-    "unidad": "u"
-  },
-  {
-    "material": "Bolson",
-    "vigenciaDesde": "2026-01-01",
-    "precio": 1.0,
-    "unidad": "u"
-  }
+  { "material": "Baldosas", "vigenciaDesde": "2025-11-01", "precio": 18500, "unidad": "u" },
+  { "material": "Baldosas", "vigenciaDesde": "2026-02-01", "precio": 21000, "unidad": "u" },
+  { "material": "Baldosas", "vigenciaDesde": "2026-04-15", "precio": 24500, "unidad": "u" },
+  { "material": "Volquetes", "vigenciaDesde": "2025-11-01", "precio": 95000, "unidad": "u" },
+  { "material": "Volquetes", "vigenciaDesde": "2026-02-01", "precio": 110000, "unidad": "u" },
+  { "material": "Volquetes", "vigenciaDesde": "2026-05-01", "precio": 128000, "unidad": "u" },
+  { "material": "Caños", "vigenciaDesde": "2025-11-01", "precio": 14500, "unidad": "u" },
+  { "material": "Caños", "vigenciaDesde": "2026-03-01", "precio": 17000, "unidad": "u" },
+  { "material": "Arena", "vigenciaDesde": "2025-11-01", "precio": 8200, "unidad": "u" },
+  { "material": "Arena", "vigenciaDesde": "2026-03-01", "precio": 9500, "unidad": "u" },
+  { "material": "Cal", "vigenciaDesde": "2025-11-01", "precio": 6800, "unidad": "u" },
+  { "material": "Cal", "vigenciaDesde": "2026-03-01", "precio": 7900, "unidad": "u" },
+  { "material": "Cemento", "vigenciaDesde": "2025-11-01", "precio": 12500, "unidad": "u" },
+  { "material": "Cemento", "vigenciaDesde": "2026-02-01", "precio": 14200, "unidad": "u" },
+  { "material": "Cemento", "vigenciaDesde": "2026-04-01", "precio": 16800, "unidad": "u" },
+  { "material": "Polietileno", "vigenciaDesde": "2025-11-01", "precio": 4200, "unidad": "u" },
+  { "material": "Bolson", "vigenciaDesde": "2025-11-01", "precio": 22000, "unidad": "u" },
+  { "material": "Bolson", "vigenciaDesde": "2026-03-01", "precio": 26500, "unidad": "u" },
+  { "material": "Plantera", "vigenciaDesde": "2025-11-01", "precio": 5500, "unidad": "u" },
+  { "material": "Cordon", "vigenciaDesde": "2025-11-01", "precio": 9800, "unidad": "u" },
+  { "material": "Cordon", "vigenciaDesde": "2026-03-01", "precio": 11200, "unidad": "u" }
 ]

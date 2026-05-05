@@ -13,7 +13,6 @@ import { costoRDO } from "@/lib/calc";
 import type { RDO, Materiales } from "@/lib/types";
 import { MATERIALES_KEYS } from "@/lib/types";
 import { useStore } from "@/lib/store";
-import { ImageOff } from "lucide-react";
 
 type Props = {
   frente: string | null;
@@ -51,40 +50,80 @@ export function ObraDrawer({ frente, rdos, onClose }: Props) {
     return acc;
   }, emptyMats());
 
+  const m2PorDia = obraRdos.length > 0 ? m2Total / obraRdos.length : 0;
+  const costoM2 = m2Total > 0 ? costoTotal / m2Total : 0;
+  const primerDia = obraRdos[obraRdos.length - 1]?.fecha;
+  const ultimoDia = obraRdos[0]?.fecha;
+  const cuadrillasUnicas = Array.from(new Set(obraRdos.map((r) => r.cuadrilla)));
+
   return (
     <Sheet open={open} onOpenChange={(o) => !o && onClose()}>
-      <SheetContent className="sm:max-w-lg overflow-y-auto p-6">
+      <SheetContent className="w-full sm:max-w-lg overflow-y-auto p-5 sm:p-6">
         <SheetHeader className="px-0">
-          <SheetTitle>{frente}</SheetTitle>
+          <SheetTitle className="text-base sm:text-lg leading-tight pr-8">
+            {frente}
+          </SheetTitle>
           <SheetDescription>
-            Detalle de obra: timeline de RDOs y materiales acumulados.
+            Timeline · materiales · costos por m²
           </SheetDescription>
         </SheetHeader>
 
         <div className="space-y-5 mt-4">
-          <div className="grid grid-cols-3 gap-3 text-sm">
-            <div>
-              <p className="text-xs text-muted-foreground">M² totales</p>
-              <p className="font-semibold tabular-nums">{fmtM2(m2Total)}</p>
+          <div className="grid grid-cols-3 gap-2 text-sm">
+            <div className="rounded-md bg-muted/40 px-2 py-2 min-w-0">
+              <p className="text-[10px] text-muted-foreground uppercase tracking-wide">M²</p>
+              <p className="font-semibold tabular-nums text-[13px] sm:text-base whitespace-nowrap">{fmtM2(m2Total)}</p>
             </div>
-            <div>
-              <p className="text-xs text-muted-foreground">Días</p>
-              <p className="font-semibold tabular-nums">{obraRdos.length}</p>
+            <div className="rounded-md bg-muted/40 px-2 py-2 min-w-0">
+              <p className="text-[10px] text-muted-foreground uppercase tracking-wide">Días</p>
+              <p className="font-semibold tabular-nums text-[13px] sm:text-base">{obraRdos.length}</p>
             </div>
-            <div>
-              <p className="text-xs text-muted-foreground">Costo total</p>
-              <p className="font-semibold tabular-nums">{fmtARS(costoTotal)}</p>
+            <div className="rounded-md bg-muted/40 px-2 py-2 min-w-0">
+              <p className="text-[10px] text-muted-foreground uppercase tracking-wide">Costo</p>
+              <p className="font-semibold tabular-nums text-[13px] sm:text-base whitespace-nowrap">{fmtARS(costoTotal)}</p>
             </div>
           </div>
 
-          <div className="aspect-video rounded-md border-2 border-dashed flex flex-col items-center justify-center text-xs text-muted-foreground gap-2">
-            <ImageOff className="h-8 w-8" />
-            <span>Foto de obra (placeholder)</span>
-            <span className="text-[10px]">En la versión completa, foto desde el celular</span>
+          <div className="grid grid-cols-2 gap-2 text-xs">
+            <div className="flex justify-between rounded-md border px-2.5 py-1.5">
+              <span className="text-muted-foreground">M² / día</span>
+              <span className="tabular-nums font-medium">{m2PorDia.toFixed(1)}</span>
+            </div>
+            <div className="flex justify-between rounded-md border px-2.5 py-1.5">
+              <span className="text-muted-foreground">Costo / m²</span>
+              <span className="tabular-nums font-medium">{fmtARS(costoM2)}</span>
+            </div>
+            {primerDia && (
+              <div className="flex justify-between rounded-md border px-2.5 py-1.5">
+                <span className="text-muted-foreground">Inicio</span>
+                <span className="tabular-nums font-medium">{fmtFecha(primerDia)}</span>
+              </div>
+            )}
+            {ultimoDia && (
+              <div className="flex justify-between rounded-md border px-2.5 py-1.5">
+                <span className="text-muted-foreground">Último día</span>
+                <span className="tabular-nums font-medium">{fmtFecha(ultimoDia)}</span>
+              </div>
+            )}
           </div>
+
+          {cuadrillasUnicas.length > 0 && (
+            <div>
+              <p className="text-xs uppercase tracking-wider text-muted-foreground font-medium mb-2">
+                Cuadrillas asignadas
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {cuadrillasUnicas.map((c) => (
+                  <Badge key={c} variant="outline">{c}</Badge>
+                ))}
+              </div>
+            </div>
+          )}
 
           <div>
-            <p className="text-sm font-medium mb-2">Materiales acumulados</p>
+            <p className="text-xs uppercase tracking-wider text-muted-foreground font-medium mb-2">
+              Materiales acumulados
+            </p>
             <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs">
               {Object.entries(matsTotal)
                 .filter(([, v]) => v > 0)
@@ -103,24 +142,37 @@ export function ObraDrawer({ frente, rdos, onClose }: Props) {
           </div>
 
           <div>
-            <p className="text-sm font-medium mb-2">Timeline de RDOs</p>
+            <p className="text-xs uppercase tracking-wider text-muted-foreground font-medium mb-2">
+              Timeline · {obraRdos.length} RDOs
+            </p>
             <div className="space-y-2">
               {obraRdos.map((r) => (
                 <div
                   key={r.id}
-                  className="flex items-start justify-between text-sm border-l-2 border-primary pl-3 py-1"
+                  className="flex items-start justify-between gap-3 text-sm border-l-2 border-primary pl-3 py-1.5"
                 >
-                  <div>
-                    <p className="font-medium">
-                      {fmtFecha(r.fecha)}
-                      <Badge variant="outline" className="ml-2 text-[10px]">
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      <span className="font-medium tabular-nums">{fmtFecha(r.fecha)}</span>
+                      <Badge variant="outline" className="text-[10px]">
                         {r.cuadrilla}
                       </Badge>
-                    </p>
-                    <p className="text-xs text-muted-foreground">
-                      {r.trabajo} · {fmtM2(r.m2)}
-                    </p>
+                      <Badge
+                        variant={r.trabajo === "Baldosas" ? "default" : "secondary"}
+                        className="text-[10px]"
+                      >
+                        {r.trabajo}
+                      </Badge>
+                    </div>
+                    {r.notas && (
+                      <p className="text-xs text-muted-foreground italic mt-0.5">
+                        {r.notas}
+                      </p>
+                    )}
                   </div>
+                  <span className="text-sm tabular-nums font-medium shrink-0">
+                    {fmtM2(r.m2)}
+                  </span>
                 </div>
               ))}
             </div>

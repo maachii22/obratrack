@@ -62,7 +62,7 @@ export function ObrasMap({ rdos, mes }: Props) {
         </div>
       </CardHeader>
       <CardContent className="p-0">
-        <div className="h-[340px]" key={isDark ? "dark" : "light"}>
+        <div className="h-[280px] sm:h-[340px]" key={isDark ? "dark" : "light"}>
           <MapContainer
             center={[-34.5627, -58.4583]}
             zoom={13}

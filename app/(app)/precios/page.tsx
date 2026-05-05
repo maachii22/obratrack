@@ -272,7 +272,7 @@ export default function PreciosPage() {
           <p className="text-xs text-muted-foreground uppercase tracking-wider font-medium mb-1">
             Catálogo · costos versionados
           </p>
-          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">Precios</h1>
+          <h1 className="text-2xl md:text-4xl font-semibold tracking-tight">Precios</h1>
           <p className="text-sm text-muted-foreground mt-1">
             Cada precio aplica desde una fecha. El costo de un RDO se calcula con la
             vigencia activa al día del trabajo.
@@ -305,13 +305,13 @@ export default function PreciosPage() {
                 </div>
                 <NuevaVigenciaCuadrilla />
               </CardHeader>
-              <CardContent>
+              <CardContent className="px-2 sm:px-6">
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      <TableHead>Cuadrilla</TableHead>
-                      <TableHead>Vigencia desde</TableHead>
-                      <TableHead className="text-right">Precio / m²</TableHead>
+                      <TableHead className="text-xs sm:text-sm">Cuadrilla</TableHead>
+                      <TableHead className="text-xs sm:text-sm">Vigencia</TableHead>
+                      <TableHead className="text-right text-xs sm:text-sm">Precio / m²</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -323,11 +323,11 @@ export default function PreciosPage() {
                         }`}
                         onClick={() => setSelCuadrilla(p.cuadrilla)}
                       >
-                        <TableCell className="font-medium">{p.cuadrilla}</TableCell>
-                        <TableCell className="tabular-nums">
+                        <TableCell className="font-medium text-xs sm:text-sm">{p.cuadrilla}</TableCell>
+                        <TableCell className="tabular-nums text-xs sm:text-sm">
                           {fmtFecha(p.vigenciaDesde)}
                         </TableCell>
-                        <TableCell className="text-right tabular-nums">
+                        <TableCell className="text-right tabular-nums text-xs sm:text-sm">
                           {fmtARS(p.precioM2)}
                         </TableCell>
                       </TableRow>
@@ -387,14 +387,14 @@ export default function PreciosPage() {
                 </div>
                 <NuevaVigenciaMaterial />
               </CardHeader>
-              <CardContent>
+              <CardContent className="px-2 sm:px-6">
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      <TableHead>Material</TableHead>
-                      <TableHead>Vigencia desde</TableHead>
-                      <TableHead>Unidad</TableHead>
-                      <TableHead className="text-right">Precio</TableHead>
+                      <TableHead className="text-xs sm:text-sm">Material</TableHead>
+                      <TableHead className="text-xs sm:text-sm">Vigencia</TableHead>
+                      <TableHead className="hidden sm:table-cell">Unidad</TableHead>
+                      <TableHead className="text-right text-xs sm:text-sm">Precio</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -406,13 +406,14 @@ export default function PreciosPage() {
                         }`}
                         onClick={() => setSelMaterial(p.material)}
                       >
-                        <TableCell className="font-medium">{p.material}</TableCell>
-                        <TableCell className="tabular-nums">
+                        <TableCell className="font-medium text-xs sm:text-sm">{p.material}</TableCell>
+                        <TableCell className="tabular-nums text-xs sm:text-sm">
                           {fmtFecha(p.vigenciaDesde)}
                         </TableCell>
-                        <TableCell>{p.unidad}</TableCell>
-                        <TableCell className="text-right tabular-nums">
+                        <TableCell className="hidden sm:table-cell">{p.unidad}</TableCell>
+                        <TableCell className="text-right tabular-nums text-xs sm:text-sm">
                           {fmtARS(p.precio)}
+                          <span className="text-muted-foreground sm:hidden"> /{p.unidad}</span>
                         </TableCell>
                       </TableRow>
                     ))}

@@ -24,6 +24,13 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { fmtARS, fmtMes, mesActual } from "@/lib/formatters";
 import { EgresosStacked } from "@/components/charts/egresos-stacked";
 import { KpiCard } from "@/components/kpi-card";
@@ -180,7 +187,10 @@ export default function FinanzasPage() {
           <p className="text-xs text-muted-foreground uppercase tracking-wider font-medium mb-1">
             Cash flow proyectado · 12 meses
           </p>
-          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">Finanzas</h1>
+          <h1 className="text-2xl md:text-4xl font-semibold tracking-tight">Finanzas</h1>
+          <p className="text-sm text-muted-foreground mt-1">
+            Impuestos + planes de pago + costos fijos + variables.
+          </p>
         </div>
       </header>
 
@@ -215,10 +225,19 @@ export default function FinanzasPage() {
       <EgresosStacked data={chartData} />
 
       <Tabs defaultValue="tabla">
-        <TabsList>
-          <TabsTrigger value="tabla">Resumen mensual</TabsTrigger>
-          <TabsTrigger value="detalle">Detalle por concepto</TabsTrigger>
-          <TabsTrigger value="vencimientos">Próximos vencimientos</TabsTrigger>
+        <TabsList className="w-full justify-stretch sm:w-auto sm:justify-center">
+          <TabsTrigger value="tabla" className="flex-1 sm:flex-initial">
+            <span className="hidden sm:inline">Resumen mensual</span>
+            <span className="sm:hidden">Resumen</span>
+          </TabsTrigger>
+          <TabsTrigger value="detalle" className="flex-1 sm:flex-initial">
+            <span className="hidden sm:inline">Detalle por concepto</span>
+            <span className="sm:hidden">Detalle</span>
+          </TabsTrigger>
+          <TabsTrigger value="vencimientos" className="flex-1 sm:flex-initial">
+            <span className="hidden sm:inline">Próximos vencimientos</span>
+            <span className="sm:hidden">Vencimientos</span>
+          </TabsTrigger>
         </TabsList>
 
         <TabsContent value="tabla" className="mt-4">
@@ -227,7 +246,8 @@ export default function FinanzasPage() {
               <CardTitle className="text-base">Egresos por categoría</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="overflow-x-auto">
+              {/* Desktop table */}
+              <div className="hidden md:block overflow-x-auto">
                 <Table>
                   <TableHeader>
                     <TableRow>
@@ -275,8 +295,65 @@ export default function FinanzasPage() {
                   </TableBody>
                 </Table>
               </div>
+
+              {/* Mobile cards */}
+              <div className="md:hidden space-y-2">
+                {egresos.map((e) => {
+                  const i = e.impuestos.reduce((s, l) => s + l.monto, 0);
+                  const p = e.planesPago.reduce((s, l) => s + l.monto, 0);
+                  const f = e.costosFijos.reduce((s, l) => s + l.monto, 0);
+                  const v = e.costosVariablesEstimados;
+                  const total = i + p + f + v;
+                  const isCurrent = e.mes === mes;
+                  const isSelected = e.mes === mesDetalle;
+                  return (
+                    <button
+                      key={e.mes}
+                      onClick={() => setMesDetalle(e.mes)}
+                      className={`w-full text-left rounded-lg border p-3 transition-colors ${
+                        isSelected
+                          ? "border-primary bg-primary/5"
+                          : "bg-card active:bg-muted/40"
+                      }`}
+                    >
+                      <div className="flex items-baseline justify-between mb-2">
+                        <p className="font-semibold">
+                          {fmtMes(e.mes)}
+                          {isCurrent && (
+                            <Badge variant="outline" className="ml-2 text-[10px]">
+                              actual
+                            </Badge>
+                          )}
+                        </p>
+                        <span className="tabular-nums font-semibold">
+                          {fmtARS(total)}
+                        </span>
+                      </div>
+                      <div className="grid grid-cols-2 gap-x-3 gap-y-1 text-[11px]">
+                        <div className="flex justify-between">
+                          <span className="text-muted-foreground">Impuestos</span>
+                          <span className="tabular-nums">{i > 0 ? fmtARS(i) : "—"}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-muted-foreground">Planes</span>
+                          <span className="tabular-nums">{p > 0 ? fmtARS(p) : "—"}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-muted-foreground">Fijos</span>
+                          <span className="tabular-nums">{fmtARS(f)}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-muted-foreground">Variables</span>
+                          <span className="tabular-nums">{v > 0 ? fmtARS(v) : "—"}</span>
+                        </div>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+
               <p className="text-xs text-muted-foreground mt-3">
-                Click en un mes para ver el detalle por concepto y editar líneas.
+                Tocá un mes para ver el detalle por concepto y editar líneas.
               </p>
             </CardContent>
           </Card>
@@ -284,26 +361,27 @@ export default function FinanzasPage() {
 
         <TabsContent value="detalle" className="mt-4">
           <Card>
-            <CardHeader className="flex flex-row items-center justify-between gap-2 pb-3">
+            <CardHeader className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pb-3">
               <div>
                 <CardTitle className="text-base">
                   Detalle · {fmtMes(mesDetalle)}
                 </CardTitle>
                 <p className="text-xs text-muted-foreground">
-                  Click en el lápiz para editar concepto, monto o vencimiento.
+                  Tocá el lápiz para editar concepto, monto o vencimiento.
                 </p>
               </div>
-              <select
-                value={mesDetalle}
-                onChange={(e) => setMesDetalle(e.target.value)}
-                className="h-9 rounded-md border bg-background px-3 text-sm"
-              >
-                {allMeses.map((m) => (
-                  <option key={m} value={m}>
-                    {fmtMes(m)}
-                  </option>
-                ))}
-              </select>
+              <Select value={mesDetalle} onValueChange={(v) => v && setMesDetalle(v)}>
+                <SelectTrigger className="w-full sm:w-[160px]">
+                  <SelectValue>{(v) => fmtMes(v as string)}</SelectValue>
+                </SelectTrigger>
+                <SelectContent>
+                  {allMeses.map((m) => (
+                    <SelectItem key={m} value={m}>
+                      {fmtMes(m)}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </CardHeader>
             <CardContent className="space-y-5">
               {!egDetalle && (
